@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Lato, Playfair_Display } from 'next/font/google'
 import "./globals.css";
+
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+config.autoAddCss = false
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -12,6 +17,17 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
+
+const titleFont = Playfair_Display({
+  subsets: ['latin'],
+  variable: '--title-font'
+})
+const normalFont = Lato({
+  weight: ["100", "300", "400", "700", "900"],
+  subsets: ['latin'],
+  variable: '--normal-font'
+})
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -26,8 +42,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${titleFont.variable} ${normalFont.variable}  ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+
         {children}
       </body>
     </html>

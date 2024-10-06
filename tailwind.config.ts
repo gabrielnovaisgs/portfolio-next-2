@@ -7,8 +7,16 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+
     extend: {
+     
+      fontFamily:{
+        title: ['var(--title-font)'],
+        normal: ['var(--normal-font)']
+      },
       colors: {
+        accent: "#438AD2",
+        accent2: "#435DD1",
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
