@@ -4,9 +4,9 @@ import { ReactNode } from "react";
 
 export default function HomeLayout({ children }: { children: ReactNode }) {
     return (
-        <section className="">
+        <main className="">
             <Navebar></Navebar>
             {children}
-        </section >
+        </main >
     )
 }
