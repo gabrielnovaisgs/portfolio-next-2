@@ -1,4 +1,5 @@
 import ServiceBlock, { ServiceBlockProps } from '@/components/home/service-block';
+import TitleBlock from '@/components/home/title-block';
 import Image from 'next/image'
 
 
@@ -9,6 +10,21 @@ export default function Home() {
       title: "Criação de sites",
       description: "Eu ofereço sites super interessantes e legais, estou escrevendo mais para essa frase ter algumas linhas",
       icon: "site.svg"
+    },
+    {
+      title: "Landing Page",
+      description: "Eu ofereço sites super interessantes e legais, estou escrevendo mais para essa frase ter algumas linhas",
+      icon: "growth.svg"
+    },
+    {
+      title: "E-commerce",
+      description: "Eu ofereço sites super interessantes e legais, estou escrevendo mais para essa frase ter algumas linhas",
+      icon: "car.svg"
+    },
+    {
+      title: "Consumo/conexão de APIs",
+      description: "Eu ofereço sites super interessantes e legais, estou escrevendo mais para essa frase ter algumas linhas",
+      icon: "gear.svg"
     }
   ]
 
@@ -31,19 +47,21 @@ export default function Home() {
       </section>
       <section id='services-section' className='flex flex-col items-center gap-8'>
         <h1 className='font-title font-bold text-3xl' >Tudo o que você precisa para um site incrivel</h1>
-        <aside className='w-full flex flex-col items-end'>
-          <div className='flex gap-1 items-center'>
-            <span className='w-14 h-1 bg-accent mt-1'></span>
-            <h2 className='font-title font-bold text-2xl text-accent align-middle'>Serviços</h2>
-          </div>
-          <p className='font-normal font-bold text-xl'>Descubra os principais serviços que eu ofereço, desenvolvidos para garantir o sucesso do seu projeto</p>
-        </aside>
-        <section className='flex flex-wrap gap-8 p-8 bg-gray-100 rounded-2xl border border-gray-200 shadow-md  w-full'>
+
+        <TitleBlock title='Serviços' className='items-end'>Descubra os principais serviços que eu ofereço, desenvolvidos para garantir o sucesso do seu projeto</TitleBlock>
+
+        <section className='flex flex-wrap justify-center gap-8 p-8 bg-gray-100 rounded-2xl border border-gray-200 shadow-md w-full'>
           {services.map((service, index) => (
 
             <ServiceBlock key={index} description={service.description} icon={service.icon} title={service.title}></ServiceBlock>
           ))}
         </section>
+      </section>
+      <section className='mt-16 flex flex-col gap-8'>
+        <TitleBlock title='Projetos'>Conheça um pouco dos projetos que eu já fiz</TitleBlock>
+        <div>
+
+        </div>
       </section>
     </main>
   );
