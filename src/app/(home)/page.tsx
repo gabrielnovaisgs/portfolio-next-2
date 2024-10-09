@@ -1,4 +1,7 @@
+import ProjectBlock, { ProjectBlockProps } from '@/components/home/project-block';
 import ServiceBlock, { ServiceBlockProps } from '@/components/home/service-block';
+import BaseStack from '@/components/home/stack/base-stack';
+import { IconStackProps } from '@/components/home/stack/icon-stack';
 import TitleBlock from '@/components/home/title-block';
 import Image from 'next/image'
 
@@ -25,6 +28,100 @@ export default function Home() {
       title: "Consumo/conexão de APIs",
       description: "Eu ofereço sites super interessantes e legais, estou escrevendo mais para essa frase ter algumas linhas",
       icon: "gear.svg"
+    }
+  ]
+
+  const projects: ProjectBlockProps[] = [
+    {
+      accessLink: 'asdasd',
+      githubLink: 'asdad',
+      title: 'Site 1'
+    },
+    {
+      accessLink: 'asdasd',
+      githubLink: 'asdad',
+      title: 'Site 2'
+    }
+    , {
+      accessLink: 'asdasd',
+      githubLink: 'asdad',
+      title: 'Site 3'
+    }
+  ]
+
+
+  const programingLinguagesIcons: IconStackProps[] = [
+    {
+      imageName: 'js',
+      title: 'JavaScript',
+      color: '#F0DB4F'
+    }
+  ]
+
+  const backendIcons: IconStackProps[] = [
+    {
+      imageName: 'express',
+      title: 'Express',
+      color: '#393939'
+    },
+    {
+      imageName: 'mysql',
+      title: 'MySQL',
+      color: '#00618A'
+    },
+    {
+      imageName: 'postgresql',
+      title: 'PostgreSQL',
+      color: '#336791'
+    },
+    {
+      imageName: 'firebase',
+      title: 'Firebase',
+      color: '#FF9100'
+    }
+  ]
+  const devopsIcons: IconStackProps[] = [
+    {
+      imageName: 'express',
+      title: 'Express',
+      color: '#393939'
+    },
+    {
+      imageName: 'mysql',
+      title: 'MySQL',
+      color: '#00618A'
+    },
+    {
+      imageName: 'postgresql',
+      title: 'PostgreSQL',
+      color: '#336791'
+    },
+    {
+      imageName: 'firebase',
+      title: 'Firebase',
+      color: '#FF9100'
+    }
+  ]
+  const frontendIcons: IconStackProps[] = [
+    {
+      imageName: 'express',
+      title: 'Express',
+      color: '#393939'
+    },
+    {
+      imageName: 'mysql',
+      title: 'MySQL',
+      color: '#00618A'
+    },
+    {
+      imageName: 'postgresql',
+      title: 'PostgreSQL',
+      color: '#336791'
+    },
+    {
+      imageName: 'firebase',
+      title: 'Firebase',
+      color: '#FF9100'
     }
   ]
 
@@ -59,9 +156,23 @@ export default function Home() {
       </section>
       <section className='mt-16 flex flex-col gap-8'>
         <TitleBlock title='Projetos'>Conheça um pouco dos projetos que eu já fiz</TitleBlock>
-        <div>
+        <section className='grid grid-cols-3 gap-8'>
+          {projects.map((project, index) => (
 
-        </div>
+            <ProjectBlock key={index} accessLink={project.accessLink} githubLink={project.githubLink} title={project.title}></ProjectBlock>
+          ))
+          }
+
+        </section>
+      </section>
+      <section className='mt-16 flex flex-col gap-8'>
+        <TitleBlock title='Stack e tecnologias' className='items-end'>Atuo com uma varidade de tecnologias</TitleBlock>
+        <section className='w-full grid grid-cols-2 gap-8'>
+          <BaseStack title='Linguagens de programação' icons={programingLinguagesIcons}></BaseStack>
+          <BaseStack title='Backend' icons={backendIcons}></BaseStack>
+          <BaseStack title='Devops' icons={devopsIcons}></BaseStack>
+          <BaseStack title='Frontend' icons={frontendIcons}></BaseStack>
+        </section>
       </section>
     </main>
   );
