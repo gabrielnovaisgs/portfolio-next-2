@@ -15,11 +15,11 @@ export default function Footer() {
                 <ul >
                     <li className="flex gap-2 items-center">
                         <FontAwesomeIcon icon={faWhatsapp}></FontAwesomeIcon>
-                        <a href="https://wa.me/5515996254521?text=Gostaria%20de%20tirar%20minha%20ideia%20do%20papel!">+55 (15) 99625-4521</a>
+                        <a target="_blank" href="https://wa.me/5515996254521?text=Gostaria%20de%20tirar%20minha%20ideia%20do%20papel!">+55 (15) 99625-4521</a>
                     </li>
                     <li className="flex gap-2 items-center">
                         <FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon>
-                        <a href="mailto:gabrielnovaisgs+work@gmail.com">gabrielnovaisgs@gmail.com</a>
+                        <a target="_blank" href="mailto:gabrielnovaisgs+work@gmail.com">gabrielnovaisgs@gmail.com</a>
                     </li>
                 </ul>
 
@@ -29,11 +29,11 @@ export default function Footer() {
                 <ul >
                     <li className="flex gap-2 items-center">
                         <FontAwesomeIcon icon={faLinkedin}></FontAwesomeIcon>
-                        <a href="https://www.linkedin.com/in/gabriel-novais-b27a82b6/">Linkedin</a>
+                        <a target="_blank" href="https://www.linkedin.com/in/gabriel-novais-b27a82b6/">Linkedin</a>
                     </li>
                     <li className="flex gap-2 items-center">
                         <FontAwesomeIcon icon={faGithubSquare}></FontAwesomeIcon>
-                        <a href="https://github.com/gabrielnovaisgs">github</a>
+                        <a target="_blank" href="https://github.com/gabrielnovaisgs">github</a>
                     </li>
                 </ul>
             </aside>

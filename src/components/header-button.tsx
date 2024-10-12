@@ -1,21 +1,30 @@
-import { ReactNode } from "react"
+import { ReactNode, useState } from "react"
 
 interface BtnHeaderProps {
     href: string
     children: ReactNode
-    selected: boolean
+    currentLink: string
+    setCurrentLink: (href: string) => void
 }
 
-export default function BtnHeader({ href, children, selected = false }: BtnHeaderProps) {
+export default function BtnHeader({ href, children, currentLink, setCurrentLink }: BtnHeaderProps) {
+    const [hover, setHover] = useState(false)
 
     return (
-
-        <a href={href} className={`px-2 hover:font-bold flex flex-col justify-center items-center transition-all
-            ${selected ? 'font-bold' : ''}
+        <a
+            href={href}
+            onClick={() => setCurrentLink(href)}
+            onMouseEnter={() => setHover(true)}
+            onMouseLeave={() => setHover(false)}
+            className={`px-2 flex flex-col justify-center items-center transition-all
+            ${currentLink === href ? 'font-bold' : ''}
         `}>
             <p>{children}</p>
-            <span className={`border-b-4  h-2 border-accent transition-all
-                ${selected ? 'w-[120%]' : 'w-0'}
+            <span className={`border-b-4 rounded-lg h-2 transition-all
+                ${currentLink === href ? 'w-[120%] border-accent' :
+                    hover ? 'border-accent/60 w-full' : 'w-0 '
+                }
+                
                 `}></span>
         </a >
 
