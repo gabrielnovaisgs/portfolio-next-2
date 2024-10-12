@@ -92,9 +92,9 @@ export default function Home() {
       color: '#336791'
     },
     {
-      imageName: 'firebase.png',
+      imageName: 'firebase.svg',
       title: 'Firebase',
-      color: '#FF9100'
+      color: '#F68220'
     }
   ]
   const devopsIcons: IconStackProps[] = [
@@ -154,11 +154,11 @@ export default function Home() {
 
 
   return (
-    <main className="pt-20 px-16">
+    <main className="pt-8 md:pt-20 px-6 md:px-16">
 
       <div id="hero-section" className=''></div>
 
-      <section className="grid grid-cols-2 gap-16 h-[calc(100vh-100px)]  items-center ">
+      <section className="grid md:grid-cols-2 md:gap-16 h-[calc(100vh-100px)]  items-center ">
         <aside className="flex flex-col justify-evenly items-center gap-5 text-center  font-title">
           <p className="font-normal">Pense. Construa. Melhore.</p>
           <h1 className="text-4xl font-bold">Criando soluções digitais que seus  clientes amarão utilizar</h1>
@@ -170,11 +170,12 @@ export default function Home() {
           ></Image>
         </aside>
       </section>
+
       <Anchor id="services-section"></Anchor>
       <section className='flex flex-col items-center gap-8'>
-        <h1 className='font-title font-bold text-3xl' >Tudo o que você precisa para um site incrivel</h1>
+        <h1 className='font-title font-bold text-3xl text-center' >Tudo o que você precisa para um site incrivel</h1>
 
-        <TitleBlock title='Serviços' className='items-end'>Descubra os principais serviços que eu ofereço, desenvolvidos para garantir o sucesso do seu projeto</TitleBlock>
+        <TitleBlock title='Serviços' className='items-end text-right'>Descubra os principais serviços que eu ofereço, desenvolvidos para garantir o sucesso do seu projeto</TitleBlock>
 
         <section className='flex flex-wrap justify-center gap-8 p-8 bg-gray-100 rounded-2xl border border-gray-200 shadow-md w-full'>
           {services.map((service, index) => (
@@ -186,9 +187,8 @@ export default function Home() {
       <Anchor id="project-section"></Anchor>
       <section id='project-section' className='flex flex-col gap-8'>
         <TitleBlock title='Projetos'>Conheça um pouco dos projetos que eu já fiz</TitleBlock>
-        <section className='grid grid-cols-3 gap-8'>
+        <section className='grid md:grid-cols-3 gap-8'>
           {projects.map((project, index) => (
-
             <ProjectBlock key={index} accessLink={project.accessLink} githubLink={project.githubLink} title={project.title}></ProjectBlock>
           ))
           }
@@ -198,7 +198,7 @@ export default function Home() {
       <Anchor id="stack-section"></Anchor>
       <section id='stack-section' className='flex flex-col gap-8'>
         <TitleBlock title='Stack e tecnologias' className='items-end'>Atuo com uma varidade de tecnologias</TitleBlock>
-        <section className='flex flex-col justify-evenly items-center gap-8'>
+        <section className='flex flex-col md:grid grid-cols-2 justify-evenly items-center gap-8'>
           <BaseStack title='Linguagens de programação' icons={programingLinguagesIcons}></BaseStack>
           <BaseStack title='Backend' icons={backendIcons}></BaseStack>
           <BaseStack title='Frontend' icons={frontendIcons}></BaseStack>
@@ -208,7 +208,7 @@ export default function Home() {
 
       <section className='my-16 flex justify-center items-center'>
         <div className='flex flex-col gap-8  rounded-lg items-center justify-center p-8  border border-gray-100 bg-gray-100 shadow-lg '>
-          <p className='text-2xl font-title text-accent font-bold'>Que tal tirar a sua ideia do papel? Entre em contato!</p>
+          <p className='text-2xl text-center font-title text-accent font-bold'>Que tal tirar a sua ideia do papel? <br></br>Entre em contato!</p>
           <CTAButton></CTAButton>
         </div>
       </section>

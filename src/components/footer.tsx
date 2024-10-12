@@ -8,11 +8,11 @@ import { faGithubSquare, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 export default function Footer() {
     return (
-        <footer className="flex p-16 bg-accent text-white justify-between font-normal font-bold text-lg">
+        <footer className="flex flex-col gap-2 items-center md:flex-row p-4 md:p-16 bg-accent text-white justify-between font-normal font-bold text-lg">
             <LogoWhite></LogoWhite>
-            <aside>
-                <p className="font-title text-2xl font-bold">Informações</p>
-                <ul >
+            <aside className="text-center">
+                <p className="font-title text-lg  md:text-2xl  font-bold">Informações</p>
+                <ul className="flex flex-col items-center">
                     <li className="flex gap-2 items-center">
                         <FontAwesomeIcon icon={faWhatsapp}></FontAwesomeIcon>
                         <a target="_blank" href="https://wa.me/5515996254521?text=Gostaria%20de%20tirar%20minha%20ideia%20do%20papel!">+55 (15) 99625-4521</a>
@@ -24,9 +24,9 @@ export default function Footer() {
                 </ul>
 
             </aside>
-            <aside>
-                <p className="font-title text-2xl font-bold">Redes sociais</p>
-                <ul >
+            <aside className="text-center ">
+                <p className="font-title md:text-2xl font-bold">Redes sociais</p>
+                <ul className="flex flex-col items-center">
                     <li className="flex gap-2 items-center">
                         <FontAwesomeIcon icon={faLinkedin}></FontAwesomeIcon>
                         <a target="_blank" href="https://www.linkedin.com/in/gabriel-novais-b27a82b6/">Linkedin</a>
