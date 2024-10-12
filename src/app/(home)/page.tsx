@@ -104,7 +104,7 @@ export default function Home() {
     },
     {
       imageName: 'actions.svg',
-      title: 'GitHub Actions',
+      title: 'Actions',
       color: '#2088FF'
     },
     {
@@ -130,7 +130,7 @@ export default function Home() {
       color: '#000000'
     },
     {
-      imageName: 'svelte.png',
+      imageName: 'svelte.svg',
       title: 'Svelte',
       color: '#FF4510'
     },
