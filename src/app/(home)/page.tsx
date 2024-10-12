@@ -1,3 +1,4 @@
+import CTAButton from '@/components/home/cta-button';
 import ProjectBlock, { ProjectBlockProps } from '@/components/home/project-block';
 import ServiceBlock, { ServiceBlockProps } from '@/components/home/service-block';
 import BaseStack from '@/components/home/stack/base-stack';
@@ -132,9 +133,7 @@ export default function Home() {
         <aside className="flex flex-col justify-evenly items-center gap-5 text-center  font-title">
           <p className="font-normal">Pense. Construa. Melhore.</p>
           <h1 className="text-4xl font-bold">Criando soluções digitais que seus  clientes amarão utilizar</h1>
-          <button className="text-2xl text-white p-3 rounded-md
-          bg-gradient-to-r from-accent/80 via-accent2  to-accent/80
-          " >Entre em contato</button>
+          <CTAButton></CTAButton>
         </aside>
         <aside className=''>
           <Image src="/assets/mockExample.png" width={1024} height={1024} alt='Exemplos de projetos'
@@ -174,6 +173,14 @@ export default function Home() {
           <BaseStack title='Frontend' icons={frontendIcons}></BaseStack>
         </section>
       </section>
+
+      <section className='my-16 flex justify-center items-center'>
+        <div className='flex flex-col gap-8  rounded-lg items-center justify-center p-8 w-full border border-gray-100 bg-gray-100 shadow-lg '>
+          <p className='text-2xl font-title text-accent font-bold'>Que tal tirar a sua ideia do papel? Entre em contato!</p>
+          <CTAButton></CTAButton>
+        </div>
+      </section>
+
     </main>
   );
 }
