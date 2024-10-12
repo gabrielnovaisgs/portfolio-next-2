@@ -11,7 +11,7 @@ export default function IconStack({ imageName, title, color }: IconStackProps) {
     return (
         <div className={`p-3 rounded-lg transition-all border shadow-md relative`} style={{
             backgroundColor: `${color}80`,
-            borderColor: `${color}99`
+            //borderColor: `${color}99`
         }}
         >
 

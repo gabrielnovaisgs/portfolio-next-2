@@ -117,6 +117,11 @@ export default function Home() {
       imageName: 'oracle.svg',
       title: 'OCI',
       color: '#EA1B21'
+    },
+    {
+      imageName: 'ansible.svg',
+      title: 'Ansible',
+      color: '#000000'
     }
   ]
   const frontendIcons: IconStackProps[] = [
@@ -139,7 +144,12 @@ export default function Home() {
       imageName: 'figma.svg',
       title: 'Figma',
       color: '#000000'
-    }
+    },
+    {
+      imageName: 'tailwind.svg',
+      title: 'Tailwind',
+      color: '#38BDF8'
+    },
   ]
 
 
@@ -188,16 +198,16 @@ export default function Home() {
       <Anchor id="stack-section"></Anchor>
       <section id='stack-section' className='flex flex-col gap-8'>
         <TitleBlock title='Stack e tecnologias' className='items-end'>Atuo com uma varidade de tecnologias</TitleBlock>
-        <section className='w-full grid grid-cols-2 gap-8'>
+        <section className='flex flex-col justify-evenly items-center gap-8'>
           <BaseStack title='Linguagens de programação' icons={programingLinguagesIcons}></BaseStack>
           <BaseStack title='Backend' icons={backendIcons}></BaseStack>
-          <BaseStack title='Devops' icons={devopsIcons}></BaseStack>
           <BaseStack title='Frontend' icons={frontendIcons}></BaseStack>
+          <BaseStack title='Devops' icons={devopsIcons}></BaseStack>
         </section>
       </section>
 
       <section className='my-16 flex justify-center items-center'>
-        <div className='flex flex-col gap-8  rounded-lg items-center justify-center p-8 w-full border border-gray-100 bg-gray-100 shadow-lg '>
+        <div className='flex flex-col gap-8  rounded-lg items-center justify-center p-8  border border-gray-100 bg-gray-100 shadow-lg '>
           <p className='text-2xl font-title text-accent font-bold'>Que tal tirar a sua ideia do papel? Entre em contato!</p>
           <CTAButton></CTAButton>
         </div>
