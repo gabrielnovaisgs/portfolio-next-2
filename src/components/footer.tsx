@@ -8,7 +8,7 @@ import { faGithubSquare, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 export default function Footer() {
     return (
-        <footer className="flex flex-col gap-2 items-center md:flex-row p-4 md:p-16 bg-accent text-white justify-between font-normal font-bold text-lg">
+        <footer className="hidden md:flex flex-col gap-2 items-center md:flex-row p-4 md:p-16 bg-accent text-white justify-between font-normal font-bold text-lg">
             <LogoWhite></LogoWhite>
             <aside className="text-center">
                 <p className="font-title text-lg  md:text-2xl  font-bold">Informações</p>
