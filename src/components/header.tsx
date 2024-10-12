@@ -12,7 +12,7 @@ export default function Navebar() {
 
 
     return (
-        <header className="font-title  hidden md:flex px-16 py-6 bg-gray-100/50 backdrop-blur-md text-lg w-full justify-between items-center fixed">
+        <header className="font-title top-0  hidden md:flex px-16 py-6 bg-gray-100/50 backdrop-blur-md text-lg w-full justify-between items-center fixed">
             <Logo></Logo>
             <nav className="flex justify-center gap-20 items-center">
                 <BtnHeader setCurrentLink={setCurrentLink} currentLink={currentLink} href="/#hero-section">Home</BtnHeader>
