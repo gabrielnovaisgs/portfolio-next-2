@@ -53,76 +53,91 @@ export default function Home() {
 
   const programingLinguagesIcons: IconStackProps[] = [
     {
-      imageName: 'js',
+      imageName: 'js.svg',
       title: 'JavaScript',
       color: '#F0DB4F'
+    },
+    {
+      imageName: 'typescript.svg',
+      title: 'TypeScript',
+      color: '#3078C6'
+    },
+    {
+      imageName: 'python.svg',
+      title: 'Python',
+      color: '#F0DB4F'
+    },
+    {
+      imageName: 'php.svg',
+      title: 'PHP',
+      color: '#8992BA'
     }
   ]
 
   const backendIcons: IconStackProps[] = [
     {
-      imageName: 'express',
+      imageName: 'express.svg',
       title: 'Express',
       color: '#393939'
     },
     {
-      imageName: 'mysql',
+      imageName: 'mysql.svg',
       title: 'MySQL',
       color: '#00618A'
     },
     {
-      imageName: 'postgresql',
+      imageName: 'postgresql.svg',
       title: 'PostgreSQL',
       color: '#336791'
     },
     {
-      imageName: 'firebase',
+      imageName: 'firebase.png',
       title: 'Firebase',
       color: '#FF9100'
     }
   ]
   const devopsIcons: IconStackProps[] = [
     {
-      imageName: 'express',
-      title: 'Express',
-      color: '#393939'
+      imageName: 'docker.svg',
+      title: 'Docker',
+      color: '#009DDB'
     },
     {
-      imageName: 'mysql',
-      title: 'MySQL',
-      color: '#00618A'
+      imageName: 'actions.svg',
+      title: 'GitHub Actions',
+      color: '#2088FF'
     },
     {
-      imageName: 'postgresql',
-      title: 'PostgreSQL',
-      color: '#336791'
+      imageName: 'nginx.svg',
+      title: 'Nginx',
+      color: '#009900'
     },
     {
-      imageName: 'firebase',
-      title: 'Firebase',
-      color: '#FF9100'
+      imageName: 'oracle.svg',
+      title: 'OCI',
+      color: '#EA1B21'
     }
   ]
   const frontendIcons: IconStackProps[] = [
     {
-      imageName: 'express',
-      title: 'Express',
-      color: '#393939'
+      imageName: 'react.svg',
+      title: 'React',
+      color: '#53C1DE'
     },
     {
-      imageName: 'mysql',
-      title: 'MySQL',
-      color: '#00618A'
+      imageName: 'nextjs.svg',
+      title: 'NextJS',
+      color: '#000000'
     },
     {
-      imageName: 'postgresql',
-      title: 'PostgreSQL',
-      color: '#336791'
+      imageName: 'svelte.png',
+      title: 'Svelte',
+      color: '#FF4510'
     },
     {
-      imageName: 'firebase',
-      title: 'Firebase',
-      color: '#FF9100'
+      imageName: 'figma.svg',
+      title: 'Figma',
+      color: '#000000'
     }
   ]
 
