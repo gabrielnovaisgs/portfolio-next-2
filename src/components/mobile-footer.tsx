@@ -31,7 +31,11 @@ export default function MobileFooter() {
             </nav>
 
             <aside className="grid grid-cols-3 w-full items-center justify-center gap-8">
-
+                <a target="_blank" href="https://www.linkedin.com/in/gabriel-novais-b27a82b6/"
+                    className="col-start-1 text-center"
+                >
+                    <FontAwesomeIcon icon={faLinkedin} size="2xl" className="text-accent" />
+                </a>
 
                 <button className="col-start-2 transition-all" onClick={() => setMenuVisibility((prevValue) => !prevValue)}>
                     <FontAwesomeIcon icon={faBars} size="2xl" className={`${menuVisbility ? 'text-accent2' : 'text-accent'}`} />
