@@ -10,16 +10,6 @@ export interface IconStackProps {
 
 export default function IconStack({ imageName, title, color }: IconStackProps) {
 
-    const [hover, setHover] = useState(false)
-    /*const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-
-    const handleMouseMove = (e: MouseEvent<HTMLDivElement, MouseEvent>) => {
-        const { left, top } = e.currentTarget.getBoundingClientRect(); // Obter posição relativa do elemento
-        setMousePos({
-            x: e.clientX - left,
-            y: e.clientY - top
-        });
-    };*/
     const [rotation, setRotation] = useState({ rotateX: 0, rotateY: 0 });
 
     // Função para capturar a posição do mouse e calcular a rotação
@@ -40,21 +30,6 @@ export default function IconStack({ imageName, title, color }: IconStackProps) {
     };
 
 
-    const globeSize = 40
-
-
-
-    const globeStyle: CSSProperties = {
-        position: 'absolute',
-        display: hover ? 'block' : 'none',
-        //top: mousePos.y - globeSize / 2 + 'px', // Ajustando para o centro
-        //left: mousePos.x - globeSize / 2 + 'px', // Ajustando para o centro
-        width: globeSize + 'px',
-        height: globeSize + 'px',
-        pointerEvents: 'none',
-        borderRadius: '100%',
-        background: 'radial-gradient(circle, ' + color + '80, ' + color + '00)'
-    }
 
     const blockStyle: CSSProperties = {
         transform: `rotateX(${rotation.rotateX}deg) rotateY(${rotation.rotateY}deg)`,
@@ -66,8 +41,7 @@ export default function IconStack({ imageName, title, color }: IconStackProps) {
             ...blockStyle
 
         }}
-            onMouseEnter={() => setHover(true)}
-            onMouseLeave={() => { setHover(false); handleMouseLeave() }}
+            onMouseLeave={handleMouseLeave}
             onMouseMove={(event) => handleMouseMove(event)}
         >
 

@@ -1,3 +1,4 @@
+import Anchor from '@/components/home/anchor';
 import CTAButton from '@/components/home/cta-button';
 import ProjectBlock, { ProjectBlockProps } from '@/components/home/project-block';
 import ServiceBlock, { ServiceBlockProps } from '@/components/home/service-block';
@@ -144,7 +145,10 @@ export default function Home() {
 
   return (
     <main className="pt-20 px-16">
-      <section id="hero-section" className="grid grid-cols-2 gap-16 h-[calc(100vh-100px)]  items-center ">
+
+      <div id="hero-section" className=''></div>
+
+      <section className="grid grid-cols-2 gap-16 h-[calc(100vh-100px)]  items-center ">
         <aside className="flex flex-col justify-evenly items-center gap-5 text-center  font-title">
           <p className="font-normal">Pense. Construa. Melhore.</p>
           <h1 className="text-4xl font-bold">Criando soluções digitais que seus  clientes amarão utilizar</h1>
@@ -156,7 +160,8 @@ export default function Home() {
           ></Image>
         </aside>
       </section>
-      <section id='services-section' className='flex flex-col items-center gap-8'>
+      <Anchor id="services-section"></Anchor>
+      <section className='flex flex-col items-center gap-8'>
         <h1 className='font-title font-bold text-3xl' >Tudo o que você precisa para um site incrivel</h1>
 
         <TitleBlock title='Serviços' className='items-end'>Descubra os principais serviços que eu ofereço, desenvolvidos para garantir o sucesso do seu projeto</TitleBlock>
@@ -168,7 +173,8 @@ export default function Home() {
           ))}
         </section>
       </section>
-      <section className='mt-16 flex flex-col gap-8'>
+      <Anchor id="project-section"></Anchor>
+      <section id='project-section' className='flex flex-col gap-8'>
         <TitleBlock title='Projetos'>Conheça um pouco dos projetos que eu já fiz</TitleBlock>
         <section className='grid grid-cols-3 gap-8'>
           {projects.map((project, index) => (
@@ -179,7 +185,8 @@ export default function Home() {
 
         </section>
       </section>
-      <section className='mt-16 flex flex-col gap-8'>
+      <Anchor id="stack-section"></Anchor>
+      <section id='stack-section' className='flex flex-col gap-8'>
         <TitleBlock title='Stack e tecnologias' className='items-end'>Atuo com uma varidade de tecnologias</TitleBlock>
         <section className='w-full grid grid-cols-2 gap-8'>
           <BaseStack title='Linguagens de programação' icons={programingLinguagesIcons}></BaseStack>
@@ -196,6 +203,9 @@ export default function Home() {
         </div>
       </section>
 
-    </main>
+    </main >
+
+
   );
+
 }

@@ -5,7 +5,7 @@ import { ReactNode } from "react";
 
 export default function HomeLayout({ children }: { children: ReactNode }) {
     return (
-        <main className="">
+        <main >
             <Navebar></Navebar>
             {children}
             <Footer></Footer>
