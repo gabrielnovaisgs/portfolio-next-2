@@ -1,6 +1,5 @@
 import Anchor from '@/components/home/anchor';
 import CTAButton from '@/components/home/cta-button';
-import ProjectBlock, { ProjectBlockProps } from '@/components/home/project-block';
 import ServiceBlock, { ServiceBlockProps } from '@/components/home/service-block';
 import BaseStack from '@/components/home/stack/base-stack';
 import { IconStackProps } from '@/components/home/stack/icon-stack';
@@ -33,6 +32,7 @@ export default function Home() {
     }
   ]
 
+  /*
   const projects: ProjectBlockProps[] = [
     {
       accessLink: 'asdasd',
@@ -49,7 +49,7 @@ export default function Home() {
       githubLink: 'asdad',
       title: 'Site 3'
     }
-  ]
+  ]*/
 
 
   const programingLinguagesIcons: IconStackProps[] = [
