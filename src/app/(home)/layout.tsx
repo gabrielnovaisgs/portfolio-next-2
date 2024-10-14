@@ -8,9 +8,9 @@ import { ReactNode } from "react";
 export default function HomeLayout({ children }: { children: ReactNode }) {
     return (
         <main>
+            {children}
             <Navebar></Navebar>
             <MobileHeader></MobileHeader>
-            {children}
             <MobileFooter></MobileFooter>
             <Footer></Footer>
         </main >

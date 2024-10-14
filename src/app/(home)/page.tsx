@@ -184,7 +184,7 @@ export default function Home() {
           ))}
         </section>
       </section>
-      <Anchor id="project-section"></Anchor>
+      {/*<Anchor id="project-section"></Anchor>
       <section id='project-section' className='flex flex-col gap-8'>
         <TitleBlock title='Projetos'>Conheça um pouco dos projetos que eu já fiz</TitleBlock>
         <section className='grid md:grid-cols-3 gap-8'>
@@ -194,7 +194,7 @@ export default function Home() {
           }
 
         </section>
-      </section>
+      </section>*/}
       <Anchor id="stack-section"></Anchor>
       <section id='stack-section' className='flex flex-col gap-8'>
         <TitleBlock title='Stack e tecnologias' className='items-end'>Atuo com uma varidade de tecnologias</TitleBlock>
