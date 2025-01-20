@@ -154,22 +154,21 @@ export default function Home() {
 
 
   return (
-    <main className="pt-8 md:pt-20 px-6 md:px-16">
+    <main className="">
 
       <div id="hero-section" className=''></div>
 
-      <section className="grid md:grid-cols-2 md:gap-16 h-[calc(100vh-100px)]  items-center ">
-        <aside className="flex flex-col justify-evenly items-center gap-5 text-center  font-title">
-          <p className="font-normal">Pense. Construa. Melhore.</p>
-          <h1 className="text-4xl font-bold">Criando soluções digitais que seus  clientes amarão utilizar</h1>
-          <CTAButton></CTAButton>
+      <section className="h-screen relative  items-center ">
+        <aside className="flex flex-col  items-center text-center absolute font-title top-0 translate-y-2/3  left-1/2 -translate-x-1/2">
+          <p className="font-medium text-xl py-2 px-4 border-dark border rounded-full">Hello!</p>
+
+          <h1 className="text-7xl font-title font-semibold">I'm <span className='text-accent'>Gabriel</span>,<br />Software Engineer</h1>
         </aside>
-        <aside className=''>
-          <Image src="/assets/mockExample.png" width={1024} height={1024} alt='Exemplos de projetos'
-            className='w-full h-full object-contain'
-          ></Image>
-        </aside>
-      </section>
+        <Image src="/assets/personal_1.png" width={1024} height={1024} alt='Exemplos de projetos'
+          className='w-full object-contain absolute bottom-0 h-3/4'
+        ></Image>
+
+      </section >
 
       <Anchor id="services-section"></Anchor>
       <section className='flex flex-col items-center gap-8'>
