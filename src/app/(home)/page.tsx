@@ -13,22 +13,22 @@ export default function Home() {
     {
       title: "Criação de sites",
       description: "Eu ofereço sites super interessantes e legais, estou escrevendo mais para essa frase ter algumas linhas",
-      icon: "site.svg"
+      icon: "preview-landing-1-desktop.png"
     },
     {
       title: "Landing Page",
       description: "Eu ofereço sites super interessantes e legais, estou escrevendo mais para essa frase ter algumas linhas",
-      icon: "growth.svg"
+      icon: "preview-landing-2-desktop.png"
     },
     {
       title: "E-commerce",
       description: "Eu ofereço sites super interessantes e legais, estou escrevendo mais para essa frase ter algumas linhas",
-      icon: "car.svg"
+      icon: "preview-landing-3-desktop.png"
     },
     {
       title: "Consumo/conexão de APIs",
       description: "Eu ofereço sites super interessantes e legais, estou escrevendo mais para essa frase ter algumas linhas",
-      icon: "gear.svg"
+      icon: "preview-landing-1-desktop.png"
     }
   ]
 
@@ -171,10 +171,15 @@ export default function Home() {
       </section >
 
       <section id="services-section"
-        className=' gap-8 bg-dark rounded-3xl mx-4 text-white
-          pt-16 pb-8 px-8
+        className='relative gap-8  mx-4 text-white
+          pt-16 pb-8 px-8 
+          
         '>
-        <div className='w-full my-8 flex justify-between gap-4'>
+        <Image src="/assets/gray-paint.jpg" width={1024} height={1024} alt='Exemplos de projetos'
+          className='w-full object-fill absolute top-0 left-0 h-full rounded-3xl  -z-20         '
+        ></Image>
+        <div className='w-full h-full absolute top-0 -z-20 left-0 bg-dark2/50 backdrop-blur-md rounded-3xl'></div>
+        <div className='w-full my-8 flex text-white justify-between gap-4 z-20'>
 
           <h1 className='font-title font-bold text-3xl text-center' >My <span className='text-accent'>Services</span></h1>
           <p className='font-medium'>Discover the main services I offer, designed to ensure the success and excellence of your projects</p>
