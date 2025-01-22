@@ -33,7 +33,7 @@ export interface ServiceBlockProps {
         }
     )*/
 
-export default function ServiceBlock({ title, description, icon }: ServiceBlockProps) {
+export default function ServiceBlock({ title, icon }: ServiceBlockProps) {
     return (
         <div className='group relative'>
             {/*<div className='w-72 h-72 flex flex-col items-stretch  relative '>

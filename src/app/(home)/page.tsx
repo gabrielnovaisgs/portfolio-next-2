@@ -158,8 +158,8 @@ export default function Home() {
 
       <div id="hero-section" className=''></div>
 
-      <section className="h-screen bg-red-50 relative  items-center ">
-        <aside className="flex flex-col  items-center text-center absolute font-title top-0 translate-y-2/3  left-1/2 -translate-x-1/2">
+      <section className="h-screen relative  items-center ">
+        <aside className="flex flex-col  items-center text-center font-title sticky top-32">
           <p className="font-medium text-xl py-2 px-4 border-dark border rounded-full">Hello!</p>
 
           <h1 className="text-7xl font-title font-semibold">I&apos;m <span className='text-accent'>Gabriel</span>,<br />Software Engineer</h1>
@@ -175,7 +175,7 @@ export default function Home() {
           pt-16 pb-8 px-8 
           
         '>
-        <Image src="/assets/gray-paint.jpg" width={1024} height={1024} alt='Exemplos de projetos'
+        <Image src="/assets/gray-paint-compress.jpg" width={1024} height={1024} alt='Exemplos de projetos'
           className='w-full object-fill absolute top-0 left-0 h-full rounded-3xl  -z-20         '
         ></Image>
         <div className='w-full h-full absolute top-0 -z-20 left-0 bg-dark2/50 backdrop-blur-md rounded-3xl'></div>

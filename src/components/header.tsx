@@ -1,6 +1,5 @@
 
 'use client'
-import Logo from "./Logo";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons/faWhatsapp";
 import { faGithubSquare, faLinkedin } from "@fortawesome/free-brands-svg-icons";
@@ -12,7 +11,7 @@ export default function Navebar() {
 
 
     return (
-        <header className="font-title top-0  hidden md:flex  px-16 py-4 w-full fixed">
+        <header className="font-title top-0  hidden md:flex  px-16 py-4 w-full sticky z-50">
 
             <nav className="rounded-full gap-4 relative bg-dark2 text-white w-full grid grid-cols-3 items-center p-2">
                 <div className="flex gap-4">
