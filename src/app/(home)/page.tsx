@@ -13,22 +13,22 @@ export default function Home() {
     {
       title: "Criação de sites",
       description: "Eu ofereço sites super interessantes e legais, estou escrevendo mais para essa frase ter algumas linhas",
-      icon: "site.svg"
+      icon: "preview-landing-1-desktop.png"
     },
     {
       title: "Landing Page",
       description: "Eu ofereço sites super interessantes e legais, estou escrevendo mais para essa frase ter algumas linhas",
-      icon: "growth.svg"
+      icon: "preview-landing-2-desktop.png"
     },
     {
       title: "E-commerce",
       description: "Eu ofereço sites super interessantes e legais, estou escrevendo mais para essa frase ter algumas linhas",
-      icon: "car.svg"
+      icon: "preview-landing-3-desktop.png"
     },
     {
       title: "Consumo/conexão de APIs",
       description: "Eu ofereço sites super interessantes e legais, estou escrevendo mais para essa frase ter algumas linhas",
-      icon: "gear.svg"
+      icon: "preview-landing-1-desktop.png"
     }
   ]
 
@@ -154,30 +154,40 @@ export default function Home() {
 
 
   return (
-    <main className="pt-8 md:pt-20 px-6 md:px-16">
+    <main className="">
 
       <div id="hero-section" className=''></div>
 
-      <section className="grid md:grid-cols-2 md:gap-16 h-[calc(100vh-100px)]  items-center ">
-        <aside className="flex flex-col justify-evenly items-center gap-5 text-center  font-title">
-          <p className="font-normal">Pense. Construa. Melhore.</p>
-          <h1 className="text-4xl font-bold">Criando soluções digitais que seus  clientes amarão utilizar</h1>
-          <CTAButton></CTAButton>
+      <section className="h-screen bg-red-50 relative  items-center ">
+        <aside className="flex flex-col  items-center text-center absolute font-title top-0 translate-y-2/3  left-1/2 -translate-x-1/2">
+          <p className="font-medium text-xl py-2 px-4 border-dark border rounded-full">Hello!</p>
+
+          <h1 className="text-7xl font-title font-semibold">I&apos;m <span className='text-accent'>Gabriel</span>,<br />Software Engineer</h1>
         </aside>
-        <aside className=''>
-          <Image src="/assets/mockExample.png" width={1024} height={1024} alt='Exemplos de projetos'
-            className='w-full h-full object-contain'
-          ></Image>
-        </aside>
-      </section>
+        <Image src="/assets/personal_1.png" width={1024} height={1024} alt='Exemplos de projetos'
+          className='w-full object-contain absolute bottom-0 h-3/4'
+        ></Image>
 
-      <Anchor id="services-section"></Anchor>
-      <section className='flex flex-col items-center gap-8'>
-        <h1 className='font-title font-bold text-3xl text-center' >Tudo o que você precisa para um site incrivel</h1>
+      </section >
 
-        <TitleBlock title='Serviços' className='items-end text-right'>Descubra os principais serviços que eu ofereço, desenvolvidos para garantir o sucesso do seu projeto</TitleBlock>
+      <section id="services-section"
+        className='relative gap-8  mx-4 text-white
+          pt-16 pb-8 px-8 
+          
+        '>
+        <Image src="/assets/gray-paint.jpg" width={1024} height={1024} alt='Exemplos de projetos'
+          className='w-full object-fill absolute top-0 left-0 h-full rounded-3xl  -z-20         '
+        ></Image>
+        <div className='w-full h-full absolute top-0 -z-20 left-0 bg-dark2/50 backdrop-blur-md rounded-3xl'></div>
+        <div className='w-full my-8 flex text-white justify-between gap-4 z-20'>
 
-        <section className='flex flex-wrap justify-center gap-8 p-8 bg-gray-100 rounded-2xl border border-gray-200 shadow-md w-full'>
+          <h1 className='font-title font-bold text-3xl text-center' >My <span className='text-accent'>Services</span></h1>
+          <p className='font-medium'>Discover the main services I offer, designed to ensure the success and excellence of your projects</p>
+        </div>
+
+        {/*<TitleBlock title='Serviços' className='items-end text-right'>Conheca os principais serviços que eu ofereço, desenvolvidos para garantir o sucesso do seu projeto</TitleBlock>*/}
+
+        <section className='flex flex-wrap justify-center gap-8 p-8 w-full'>
           {services.map((service, index) => (
 
             <ServiceBlock key={index} description={service.description} icon={service.icon} title={service.title}></ServiceBlock>

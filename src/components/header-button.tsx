@@ -9,6 +9,14 @@ interface BtnHeaderProps {
 
 export default function BtnHeader({ href, children, currentLink, setCurrentLink }: BtnHeaderProps) {
     const [hover, setHover] = useState(false)
+    /**
+     *   <span className={`  h-2 transition-all
+                    ${currentLink === href ? 'w-[120%] border-accent' :
+                        hover ? 'border-accent/60 w-full' : 'w-0 '
+                    }
+                    
+                    `}></span>
+     */
 
     return (
         <a
@@ -16,16 +24,12 @@ export default function BtnHeader({ href, children, currentLink, setCurrentLink 
             onClick={() => setCurrentLink(href)}
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
-            className={`px-2 flex flex-col justify-center items-center transition-all
-            ${currentLink === href ? 'font-bold' : ''}
+            className={`px-10  py-5  flex flex-col rounded-full justify-center items-center transition-all
+            ${currentLink === href ? 'font-bold  bg-accent' :
+                    hover ? 'bg-white/10' : ''}
         `}>
-            <p>{children}</p>
-            <span className={`border-b-4 rounded-lg h-2 transition-all
-                ${currentLink === href ? 'w-[120%] border-accent' :
-                    hover ? 'border-accent/60 w-full' : 'w-0 '
-                }
-                
-                `}></span>
+            {children}
+
         </a >
 
     )
