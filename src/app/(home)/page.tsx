@@ -1,5 +1,6 @@
 import Anchor from '@/components/home/anchor';
 import CTAButton from '@/components/home/cta-button';
+import ProjectBlock, { ProjectBlockProps } from '@/components/home/project-block';
 import ServiceBlock, { ServiceBlockProps } from '@/components/home/service-block';
 import BaseStack from '@/components/home/stack/base-stack';
 import { IconStackProps } from '@/components/home/stack/icon-stack';
@@ -32,7 +33,7 @@ export default function Home() {
     }
   ]
 
-  /*
+
   const projects: ProjectBlockProps[] = [
     {
       accessLink: 'asdasd',
@@ -49,7 +50,7 @@ export default function Home() {
       githubLink: 'asdad',
       title: 'Site 3'
     }
-  ]*/
+  ]
 
 
   const programingLinguagesIcons: IconStackProps[] = [
@@ -171,7 +172,7 @@ export default function Home() {
       </section >
 
       <section id="services-section"
-        className='relative gap-8  mx-4 text-white
+        className='relative gap-8  mx-16 text-white
           pt-16 pb-8 px-8 
           
         '>
@@ -181,7 +182,7 @@ export default function Home() {
         <div className='w-full h-full absolute top-0 -z-20 left-0 bg-dark2/50 backdrop-blur-md rounded-3xl'></div>
         <div className='w-full my-8 flex text-white justify-between gap-4 z-20'>
 
-          <h1 className='font-title font-bold text-3xl text-center' >My <span className='text-accent'>Services</span></h1>
+          <h1 className='font-title font-bold text-5xl text-center' >My <span className='text-accent'>Services</span></h1>
           <p className='font-medium'>Discover the main services I offer, designed to ensure the success and excellence of your projects</p>
         </div>
 
@@ -194,9 +195,9 @@ export default function Home() {
           ))}
         </section>
       </section>
-      {/*<Anchor id="project-section"></Anchor>
-      <section id='project-section' className='flex flex-col gap-8'>
-        <TitleBlock title='Projetos'>Conheça um pouco dos projetos que eu já fiz</TitleBlock>
+      <Anchor id="project-section"></Anchor>
+      <section id='project-section' className='flex flex-col gap-8 mx-16'>
+        <h1 className='font-title font-bold text-5xl'>Lets have a look at my <span className='text-accent'>Portfolio</span></h1>
         <section className='grid md:grid-cols-3 gap-8'>
           {projects.map((project, index) => (
             <ProjectBlock key={index} accessLink={project.accessLink} githubLink={project.githubLink} title={project.title}></ProjectBlock>
@@ -204,7 +205,7 @@ export default function Home() {
           }
 
         </section>
-      </section>*/}
+      </section>
       <Anchor id="stack-section"></Anchor>
       <section id='stack-section' className='flex flex-col gap-8'>
         <TitleBlock title='Stack e tecnologias' className='items-end'>Atuo com uma varidade de tecnologias</TitleBlock>
