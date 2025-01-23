@@ -38,17 +38,23 @@ export default function Home() {
     {
       accessLink: 'asdasd',
       githubLink: 'asdad',
-      title: 'Site 1'
+      title: 'Positivus',
+      imgSrc: `preview-landing-1-desktop.png`,
+      description: `Positivus specializes in SEO, paid ads, social media marketing, and content creation to help businesses grow online. Backed by success stories and expert insights, we craft tailored strategies for measurable results.`
     },
     {
       accessLink: 'asdasd',
       githubLink: 'asdad',
-      title: 'Site 2'
+      title: 'Travelog',
+      imgSrc: `preview-landing-2-desktop.png`,
+      description: `Discover top destinations like Rome and the Maldives with our travel agency. Enjoy easy booking, value-packed categories, and exclusive promotions. Plan your dream getaway to paradise today!`
     }
     , {
       accessLink: 'asdasd',
       githubLink: 'asdad',
-      title: 'Site 3'
+      title: 'Logoipsum',
+      imgSrc: `preview-landing-3-desktop.png`,
+      description: `Explore modern residential and commercial properties with our intuitive real estate platform. Designed for clarity and engagement, we make finding your dream space effortless. Start your search today!`
     }
   ]
 
@@ -198,9 +204,9 @@ export default function Home() {
       <Anchor id="project-section"></Anchor>
       <section id='project-section' className='flex flex-col gap-8 mx-16'>
         <h1 className='font-title font-bold text-5xl'>Lets have a look at my <span className='text-accent'>Portfolio</span></h1>
-        <section className='grid md:grid-cols-3 gap-8'>
+        <section className='flex flex-wrap justify-center gap-8'>
           {projects.map((project, index) => (
-            <ProjectBlock key={index} accessLink={project.accessLink} githubLink={project.githubLink} title={project.title}></ProjectBlock>
+            <ProjectBlock description={project.description} imgSrc={`${project.imgSrc}`} key={index} accessLink={project.accessLink} githubLink={project.githubLink} title={project.title}></ProjectBlock>
           ))
           }
 
