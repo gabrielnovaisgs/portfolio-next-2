@@ -16,9 +16,9 @@ export default function Navebar() {
             <nav className="rounded-full gap-4 relative bg-dark2 text-white w-full grid grid-cols-3 items-center p-2">
                 <div className="flex gap-4">
                     <BtnHeader setCurrentLink={setCurrentLink} currentLink={currentLink} href="/#hero-section">Home</BtnHeader>
-                    <BtnHeader setCurrentLink={setCurrentLink} currentLink={currentLink} href="/#services-section">Serviços </BtnHeader>
-                    {/*  <BtnHeader setCurrentLink={setCurrentLink} currentLink={currentLink} href="/#project-section">Projetos </BtnHeader> */}
-                    <BtnHeader setCurrentLink={setCurrentLink} currentLink={currentLink} href="/#stack-section">Tecnologia </BtnHeader>
+                    <BtnHeader setCurrentLink={setCurrentLink} currentLink={currentLink} href="/#services-section">Services</BtnHeader>
+                    <BtnHeader setCurrentLink={setCurrentLink} currentLink={currentLink} href="/#project-section">Projects</BtnHeader>
+                    <BtnHeader setCurrentLink={setCurrentLink} currentLink={currentLink} href="/#stack-section">Skills </BtnHeader>
                 </div>
                 <div className="flex justify-center items-center bg-accent w-24 h-24 rounded-full 
                 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 hover:scale-110 transition-all">

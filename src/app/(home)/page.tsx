@@ -214,9 +214,9 @@ export default function Home() {
       </section>
       <Anchor id="stack-section"></Anchor>
       <section id='stack-section' className='flex flex-col gap-8'>
-        <TitleBlock title='Stack e tecnologias' className='items-end'>Atuo com uma varidade de tecnologias</TitleBlock>
-        <section className='flex flex-col md:grid grid-cols-2 justify-evenly items-center gap-8'>
-          <BaseStack title='Linguagens de programação' icons={programingLinguagesIcons}></BaseStack>
+        <h1 className='font-title font-bold text-5xl text-center text-accent'>Skills</h1>
+        <section className='flex flex-col items-center gap-8'>
+          <BaseStack title='Programing Linguages' icons={programingLinguagesIcons}></BaseStack>
           <BaseStack title='Backend' icons={backendIcons}></BaseStack>
           <BaseStack title='Frontend' icons={frontendIcons}></BaseStack>
           <BaseStack title='Devops' icons={devopsIcons}></BaseStack>
