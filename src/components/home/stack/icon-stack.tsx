@@ -6,7 +6,7 @@ export interface IconStackProps {
     color: string
 }
 
-export default function IconStack({ imageName, title, color }: IconStackProps) {
+export default function IconStack({ imageName, title }: IconStackProps) {
 
     return (
         <div className={`px-4 group hover:-translate-y-1 bg-detail hover:shadow-xl  py-2 rounded-full transition-all duration-300 border shadow-md relative`}
