@@ -71,9 +71,9 @@ export default function ServiceBlock({ title, icon }: ServiceBlockProps) {
             </svg>
 
 
-            <button className='rounded-full  p-4 bg-white/10 absolute bottom-0 right-4 
-            transition-all group-hover:bg-accent/70 group-hover:text-white -rotate-45 group-hover:scale-110 duration-300'>
-                <FontAwesomeIcon icon={faArrowRight} className='' size='2xl'></FontAwesomeIcon>
+            <button className='rounded-full flex justify-center items-center w-12 h-12  p-4 bg-white/10 absolute bottom-0 right-0 
+            transition-all group-hover:bg-accent/70 group-hover:text-white group-hover:scale-110 duration-300'>
+                <FontAwesomeIcon icon={faArrowRight} className='-rotate-45'></FontAwesomeIcon>
             </button>
         </div>
     )

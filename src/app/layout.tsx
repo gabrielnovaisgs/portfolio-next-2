@@ -41,6 +41,11 @@ const normalFont = localFont({
       path: "./fonts/lufga/LufgaMedium.ttf",
       style: "normal",
       weight: "500",
+    },
+    {
+      path: "./fonts/lufga/LufgaBold.ttf",
+      style: "normal",
+      weight: "700",
     }
   ]
 })
@@ -48,7 +53,7 @@ const normalFont = localFont({
 
 export const metadata: Metadata = {
   title: "Gabriel Novais",
-  description: "Software Engineer",
+  description: "Hello! I'm Gabriel Novais, a Software Engineer",
 };
 
 export default function RootLayout({

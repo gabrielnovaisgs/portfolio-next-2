@@ -13,7 +13,7 @@ export default function MobileFooter() {
     return (
 
         <div className="flex 
-        
+        z-50
         items-center
         justify-center
         md:hidden w-[98%] ml-[1%] bottom-0 fixed py-2 
@@ -21,13 +21,13 @@ export default function MobileFooter() {
         bg-white
         rounded-t-lg border ">
 
-            <nav className={`fixed bottom-14 px-8 py-4 w-1/2 bg-white/95 shadow-md rounded-md 
+            <nav className={`fixed bottom-14 px-8 py-4 w-1/2 bg-white/95 shadow-md rounded-md  
                 transition-all  ${menuVisbility ? '' : 'h-0 hidden'}
             `}>
                 <BtnHeader setCurrentLink={setCurrentLink} currentLink={currentLink} href="/#hero-section">Home</BtnHeader>
-                <BtnHeader setCurrentLink={setCurrentLink} currentLink={currentLink} href="/#services-section">Serviços </BtnHeader>
-                {/*<BtnHeader setCurrentLink={setCurrentLink} currentLink={currentLink} href="/#project-section">Projetos </BtnHeader> */}
-                <BtnHeader setCurrentLink={setCurrentLink} currentLink={currentLink} href="/#stack-section">Tecnologia </BtnHeader>
+                <BtnHeader setCurrentLink={setCurrentLink} currentLink={currentLink} href="/#services-section">Services </BtnHeader>
+                <BtnHeader setCurrentLink={setCurrentLink} currentLink={currentLink} href="/#project-section">Projects </BtnHeader>
+                <BtnHeader setCurrentLink={setCurrentLink} currentLink={currentLink} href="/#stack-section">Skills </BtnHeader>
             </nav>
 
             <aside className="grid grid-cols-3 w-full items-center justify-center gap-8">

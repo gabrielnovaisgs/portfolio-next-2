@@ -6,20 +6,21 @@ export interface IconStackProps {
     color: string
 }
 
-export default function IconStack({ imageName, title, color }: IconStackProps) {
+export default function IconStack({ imageName, title }: IconStackProps) {
 
     return (
-        <div className={`p-3 rounded-lg transition-all border shadow-md relative`} style={{
-            backgroundColor: `${color}80`,
-            //borderColor: `${color}99`
-        }}
+        <div className={`px-4 group hover:-translate-y-1 bg-detail hover:shadow-xl  py-2 rounded-full transition-all duration-300 border shadow-md relative`}
+            style={{
+                //    backgroundColor: `${color}80`,
+                //borderColor: `${color}99`
+                //drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]
+            }}
         >
+            <div className="flex   items-center justify-center gap-4">
+                <Image src={`/assets/stack/${imageName}`} alt={`Logo do ${imageName}`} width={32} height={32}
+                    className="object-contain object-center"></Image>
 
-            <div className="min-w-20 max-h-20 md:w-28 md:h-28 md:max-h-28 gap-1 grid grid-rows-[80%_1fr] items-center">
-                <Image src={`/assets/stack/${imageName}`} alt={`Logo do ${imageName}`} width={64} height={64}
-                    className="w-full  h-full object-contain object-center"></Image>
-
-                <p className="font-mono transition-all text-white text-center  md:text-xl font-extrabold drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]"
+                <p className="font-title transition-all text-black text-center  text-xl "
 
                 >{title}</p>
             </div>
