@@ -20,14 +20,15 @@ export default function Navebar() {
                     <BtnHeader setCurrentLink={setCurrentLink} currentLink={currentLink} href="/#project-section">Projects</BtnHeader>
                     <BtnHeader setCurrentLink={setCurrentLink} currentLink={currentLink} href="/#stack-section">Skills </BtnHeader>
                 </div>
-                <div className="flex justify-center items-center bg-accent w-24 h-24 rounded-full 
-                absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 hover:scale-110 transition-all">
+                {/*<div className="flex justify-center items-center bg-accent w-24 h-24 rounded-full 
+                absolute top-1/2 right-0 -translate-x-1/2 -translate-y-1/2 hover:scale-110 transition-all">
 
                     <h1 className="font-title font-extrabold text-5xl  
                     
         ">{"GN"}</h1>
+            </div>*/}
 
-                </div>
+
                 <aside className="flex justify-end items-center gap-8 mr-4 col-start-3">
                     <a
                         className="px-4 py-4  rounded-full hover:bg-white/10 transition-all"
@@ -48,6 +49,6 @@ export default function Navebar() {
             </nav>
 
             {/**/}
-        </header>
+        </header >
     )
 }

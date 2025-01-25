@@ -1,8 +1,7 @@
 import { faGithubSquare } from '@fortawesome/free-brands-svg-icons'
-import { faArrowAltCircleRight, faArrowRight, faLink } from '@fortawesome/free-solid-svg-icons'
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
-import Link from 'next/link'
 
 export interface ProjectBlockProps {
     title: string
@@ -20,11 +19,11 @@ export default function ProjectBlock({ title, description, accessLink, githubLin
             className='
             transition-all duration-500
             
-            personal-project w-full max-w-2xl max-h-96 relative group cursor-pointer
+            personal-project w-full max-w-md max-h-96 relative group 
         
         '>
-            <button className='
-            absolute z-10
+            <a href={accessLink} target='_blank' className='
+            absolute z-30
                  right-4 top-4
                  group-hover:text-detail group-hover:bg-accent
                 transition-all duration-500
@@ -33,7 +32,18 @@ export default function ProjectBlock({ title, description, accessLink, githubLin
                 <FontAwesomeIcon icon={faArrowRight} size='2xl'
                     className=''
                 ></FontAwesomeIcon>
-            </button>
+            </a >
+            <a href={githubLink} target='_blank' className='
+            absolute z-40
+                 left-4 top-4
+                 hover:text-accent 
+                transition-all duration-500
+                w-fit h-fit 
+                  text-dark2'>
+                <FontAwesomeIcon icon={faGithubSquare}
+                    className='text-5xl'
+                ></FontAwesomeIcon>
+            </a >
             <Image
                 className='rounded-3xl shadow-xl w-full h-full border object-cover
                 '
@@ -43,15 +53,15 @@ export default function ProjectBlock({ title, description, accessLink, githubLin
             overflow-hidden text-white
                             '>
 
-                <div className='gap- p-4 translate-y-1/3 group-hover:translate-y-0
+                <div className=' p-4 translate-y-2/3 group-hover:translate-y-0
                 w-[calc(100%-2rem)] m-4 h-fit  duration-500
                 transition-all group-hover:bg-black/60
                 rounded-3xl  
-                group-hover:backdrop-blur-sm flex flex-col
+                group-hover:backdrop-blur-sm md:flex flex-col
                 '>
 
-                    <h3 className=' transition-all duration-300 ease-in-out font-title text-4xl font-bold '>{title}</h3>
-                    <p className='text-sm text-justify opacity-0 transition-all duration-500 group-hover:opacity-100'>
+                    <h3 className=' transition-all duration-300 ease-in-out font-title text-xl font-bold '>{title}</h3>
+                    <p className=' text-sm text-justify opacity-0 transition-all duration-500 group-hover:opacity-100'>
                         {description}
                     </p>
 
