@@ -53,7 +53,7 @@ const normalFont = localFont({
 
 export const metadata: Metadata = {
   title: "Gabriel Novais",
-  description: "Software Engineer",
+  description: "Hello! I'm Gabriel Novais, a Software Engineer",
 };
 
 export default function RootLayout({
