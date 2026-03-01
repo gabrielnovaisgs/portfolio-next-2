@@ -27,7 +27,7 @@ const isActive = (path: string) => {
   href="#main-content"
   class="absolute start-16 -top-full z-50 rounded-b-lg bg-accent px-4 py-2 font-medium text-background transition-all focus:top-0"
 >
-  Skip to content
+  Pular para o conteúdo
 </a>
 
 <header id="main-header" class="sticky top-0 z-40 w-full transition-colors duration-300">
@@ -56,7 +56,7 @@ const isActive = (path: string) => {
         <button
           id="menu-btn"
           class="hamburger-btn sm:hidden"
-          aria-label="Open Menu"
+          aria-label="Abrir menu"
           aria-expanded="false"
           aria-controls="mobile-menu"
         >
@@ -87,14 +87,14 @@ const isActive = (path: string) => {
             <a
               href="/about"
               class:list={["nav-link", { "nav-active": isActive("/about") }]}
-              >About</a
+              >Sobre</a
             >
           </li>
           <li class="flex items-center">
             <a
               href="/search"
               class:list={["nav-link", { "nav-active": isActive("/search") }]}
-              title="Ir a búsqueda">Search</a
+              title="Ir para busca">Buscar</a
             >
           </li>
           {
@@ -106,11 +106,11 @@ const isActive = (path: string) => {
                     "nav-link",
                     { "nav-active": isActive("/archives") },
                   ]}
-                  title="Archives"
+                  title="Arquivo"
                   aria-label="archives"
                 >
                   <IconArchive class="hidden sm:inline-block" />
-                  <span class="sm:sr-only">Archives</span>
+                  <span class="sm:sr-only">Arquivo</span>
                 </LinkButton>
               </li>
             )
@@ -124,11 +124,11 @@ const isActive = (path: string) => {
                     "nav-link",
                     { "nav-active": isActive("/galleries") },
                   ]}
-                  title="Galerías"
+                  title="Galerias"
                   aria-label="galleries"
                 >
                   <IconGallery class="hidden sm:inline-block" />
-                  <span class="sm:sr-only">Galerías</span>
+                  <span class="sm:sr-only">Galerias</span>
                 </LinkButton>
               </li>
             )
@@ -144,7 +144,7 @@ const isActive = (path: string) => {
               data-search-trigger
               class="nav-search-btn"
               title="Buscar (⌘K)"
-              aria-label="Abrir búsqueda"
+              aria-label="Abrir busca"
               aria-keyshortcuts="Meta+K"
             >
               <IconSearch class="size-4.5" />
@@ -157,7 +157,7 @@ const isActive = (path: string) => {
                 <button
                   id="theme-btn"
                   class="nav-icon-btn relative"
-                  title="Toggles light & dark"
+                  title="Alternar claro/escuro"
                   aria-label="auto"
                   aria-live="polite"
                 >
@@ -204,7 +204,7 @@ const isActive = (path: string) => {
               style="--i:2"
             >
               <span class="mobile-nav-indicator"></span>
-              <span>About</span>
+              <span>Sobre</span>
             </a>
             {
               SITE.showArchives && (
@@ -217,7 +217,7 @@ const isActive = (path: string) => {
                   style="--i:3"
                 >
                   <span class="mobile-nav-indicator" />
-                  <span>Archives</span>
+                  <span>Arquivo</span>
                 </a>
               )
             }
@@ -232,7 +232,7 @@ const isActive = (path: string) => {
                   style="--i:4"
                 >
                   <span class="mobile-nav-indicator" />
-                  <span>Galerías</span>
+                  <span>Galerias</span>
                 </a>
               )
             }
@@ -247,24 +247,24 @@ const isActive = (path: string) => {
               data-search-trigger
               class="mobile-action-btn flex-1 justify-center"
               title="Buscar (⌘K)"
-              aria-label="Abrir búsqueda"
+              aria-label="Abrir busca"
             >
               <IconSearch class="size-4" />
-              <span>Search</span>
+              <span>Buscar</span>
             </button>
             {
               SITE.lightAndDarkMode && (
                 <button
                   id="theme-btn-mobile"
                   class="mobile-action-btn flex-1 justify-center"
-                  title="Cambiar tema"
+                  title="Alternar tema"
                   aria-label="auto"
                   aria-live="polite"
                 >
                   <IconMoon class="block size-4 dark:hidden" />
                   <IconSunHigh class="hidden size-4 dark:block" />
-                  <span class="block dark:hidden">Dark mode</span>
-                  <span class="hidden dark:block">Light mode</span>
+                  <span class="block dark:hidden">Modo escuro</span>
+                  <span class="hidden dark:block">Modo claro</span>
                 </button>
               )
             }
@@ -751,7 +751,7 @@ const isActive = (path: string) => {
     
     const closeMenu = () => {
       menuBtn.setAttribute("aria-expanded", "false");
-      menuBtn.setAttribute("aria-label", "Open Menu");
+      menuBtn.setAttribute("aria-label", "Abrir menu");
       mobileMenu.classList.remove("is-open");
       mobileMenu.setAttribute("aria-hidden", "true");
     };
@@ -765,7 +765,7 @@ const isActive = (path: string) => {
           closeMenu();
         } else {
           menuBtn.setAttribute("aria-expanded", "true");
-          menuBtn.setAttribute("aria-label", "Close Menu");
+          menuBtn.setAttribute("aria-label", "Fechar menu");
           mobileMenu.classList.add("is-open");
           mobileMenu.setAttribute("aria-hidden", "false");
         }

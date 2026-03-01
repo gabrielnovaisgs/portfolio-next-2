@@ -20,25 +20,25 @@ export const SOCIALS: Social[] = [
   {
     name: "GitHub",
     href: "https://github.com/0xdres/",
-    linkTitle: `${SITE.title} en GitHub`,
+    linkTitle: `${SITE.title} no GitHub`,
     icon: IconGitHub,
   },
   {
     name: "X",
     href: "https://x.com/avdyen",
-    linkTitle: `${SITE.title} en X`,
+    linkTitle: `${SITE.title} no X`,
     icon: IconBrandX,
   },
   {
     name: "LinkedIn",
     href: "https://www.linkedin.com/in/avdyan/",
-    linkTitle: `${SITE.title} en LinkedIn`,
+    linkTitle: `${SITE.title} no LinkedIn`,
     icon: IconLinkedin,
   },
   {
     name: "Mail",
     href: "mailto:andres04u@gmail.com",
-    linkTitle: `Envia un correo a ${SITE.title}`,
+    linkTitle: `Enviar e-mail para ${SITE.title}`,
     icon: IconMail,
   },
 ] as const;
@@ -47,37 +47,37 @@ export const SHARE_LINKS: Social[] = [
   {
     name: "WhatsApp",
     href: "https://wa.me/?text=",
-    linkTitle: `Envia este post por WhatsApp`,
+    linkTitle: `Compartilhar por WhatsApp`,
     icon: IconWhatsapp,
   },
   {
     name: "Facebook",
     href: "https://www.facebook.com/sharer.php?u=",
-    linkTitle: `Comparte este post en Facebook`,
+    linkTitle: `Compartilhar no Facebook`,
     icon: IconFacebook,
   },
   {
     name: "X",
     href: "https://x.com/intent/post?url=",
-    linkTitle: `Comparte este post en X`,
+    linkTitle: `Compartilhar no X`,
     icon: IconBrandX,
   },
   {
     name: "Telegram",
     href: "https://t.me/share/url?url=",
-    linkTitle: `Comparte este post por Telegram`,
+    linkTitle: `Compartilhar por Telegram`,
     icon: IconTelegram,
   },
   {
     name: "Pinterest",
     href: "https://pinterest.com/pin/create/button/?url=",
-    linkTitle: `Comparte este post en Pinterest`,
+    linkTitle: `Compartilhar no Pinterest`,
     icon: IconPinterest,
   },
   {
     name: "Mail",
     href: "mailto:?subject=See%20this%20post&body=",
-    linkTitle: `Envia este post por correo`,
+    linkTitle: `Compartilhar por e-mail`,
     icon: IconMail,
   },
 ] as const;

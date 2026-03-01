@@ -4,6 +4,7 @@ import { SOCIALS } from "@/constants";
 import LinkButton from "./LinkButton.astro";
 import { SITE } from "@/config";
 import Logo from "@/assets/logo/devosfera.svg";
+import { t } from "@/i18n";
 
 const currentYear = new Date().getFullYear();
 
@@ -40,7 +41,7 @@ const { noMarginTop = false, class: className, ...attrs } = Astro.props;
         <p
           class="max-w-xs text-center font-cartograph text-[11px] leading-relaxed tracking-wide text-foreground/40 sm:text-start"
         >
-          Un espacio donde la curiosidad se convierte en código.
+          {t("footer.tagline")}
         </p>
       </div>
 
@@ -48,7 +49,7 @@ const { noMarginTop = false, class: className, ...attrs } = Astro.props;
       <div class="flex flex-col items-center gap-3 sm:items-end">
         <span
           class="font-cartograph text-[10px] tracking-wider text-muted-foreground uppercase select-none"
-          >Conectar</span
+          >{t("footer.connect")}</span
         >
         <div class="flex items-center gap-2">
           {
@@ -80,10 +81,10 @@ const { noMarginTop = false, class: className, ...attrs } = Astro.props;
     >
       <p class="font-cartograph text-[11px] tracking-wide opacity-35">
         &copy; {currentYear}
-        {SITE.title}. Todos los derechos reservados.
+        {SITE.title}. {t("footer.rights")}
       </p>
       <p class="font-cartograph text-[11px] tracking-wide opacity-30">
-        Hecho con <span class="text-accent">&#9829;</span> y mucho café
+        {t("footer.madeWith")} <span class="text-accent">&#9829;</span> {t("footer.coffee")}
       </p>
     </div>
   </div>

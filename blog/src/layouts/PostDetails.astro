@@ -193,7 +193,7 @@ const nextPost =
       
       <div class="relative z-10 flex items-center gap-2 font-cartograph text-[10px] tracking-widest text-accent/40 uppercase select-none">
         <span class="h-1.5 w-1.5 rounded-full bg-accent/50 shadow-[0_0_8px_var(--color-accent)]"></span>
-        fin
+        fim
       </div>
 
       <div class="relative h-px flex-1 bg-linear-to-l from-transparent via-border/30 to-accent/20">
@@ -277,7 +277,7 @@ const nextPost =
             <div class="post-nav-bg" />
             <div class="flex items-center gap-1.5">
               <span class="font-cartograph text-[10px] tracking-wider text-foreground/35 uppercase">
-                Siguiente
+                Próximo
               </span>
               <svg
                 class="size-3.5 text-accent/50 transition-transform duration-300 group-hover:translate-x-1 rtl:rotate-180"
@@ -363,7 +363,7 @@ const nextPost =
       span.ariaHidden = "true";
       span.innerText = "#";
       link.appendChild(span);
-      link.ariaLabel = "link to heading";
+      link.ariaLabel = "link para seção";
       heading.appendChild(link);
     }
   }
@@ -372,7 +372,7 @@ const nextPost =
   /** Attaches copy buttons to code blocks in the document,
    * allowing users to copy code easily. */
   function attachCopyButtons() {
-    const copyButtonLabel = "Copy";
+    const copyButtonLabel = "Copiar";
     const codeBlocks = Array.from(document.querySelectorAll("pre"));
 
     for (const codeBlock of codeBlocks) {
@@ -411,7 +411,7 @@ const nextPost =
       await navigator.clipboard.writeText(text ?? "");
 
       // visual feedback that task is completed
-      button.innerText = "Copied";
+      button.innerText = "Copiado";
 
       setTimeout(() => {
         button.innerText = copyButtonLabel;

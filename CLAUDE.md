@@ -27,6 +27,20 @@ pnpm run format       # Prettier
 
 > The Pagefind search index is only built during `pnpm run build`. Run `pnpm run preview` after to test `⌘K` search locally.
 
+## i18n
+
+All UI strings are centralized in `blog/src/i18n/index.ts`. Import with:
+
+```ts
+import { t, MONTHS } from "@/i18n";
+```
+
+- `t("key")` returns the Portuguese (pt-BR) translation
+- `MONTHS` is a 0-indexed array of month names in Portuguese
+- `src/config.ts` has `lang: "pt-BR"` and `timezone: "America/Sao_Paulo"`
+
+When adding new UI strings to components: add the key+value to `src/i18n/index.ts` first, then use `t("key")` in the template. **Do not** use `t()` inside `<script>` tags (client-side JS) — hardcode the Portuguese string directly there.
+
 ## Architecture
 
 ### Tech stack

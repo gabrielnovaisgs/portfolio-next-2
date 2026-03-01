@@ -1,6 +1,7 @@
 ---
 import IconChevronLeft from "@/assets/icons/IconChevronLeft.svg";
 import { SITE } from "@/config";
+import { t } from "@/i18n";
 
 // Build breadcrumb from current URL
 const currentUrlPath = Astro.url.pathname.replace(/\/+$/, "");
@@ -40,8 +41,8 @@ const pathSegments = currentUrlPath.split("/").filter(s => s.trim());
             <a
               href="/"
               class="breadcrumb-link shrink-0 rounded-md px-1.5 py-0.5 text-foreground/50 transition-colors duration-200 hover:bg-muted/10 hover:text-accent"
-              aria-label="Ir a inicio"
-              title="Inicio"
+              aria-label={t("back.aria")}
+              title={t("back.title")}
             >
               ~
             </a>
