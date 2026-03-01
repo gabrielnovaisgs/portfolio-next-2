@@ -1,10 +1,7 @@
 ---
 import IconMoon from "@/assets/icons/IconMoon.svg";
 import IconSearch from "@/assets/icons/IconSearch.svg";
-import IconArchive from "@/assets/icons/IconArchive.svg";
-import IconGallery from "@/assets/icons/IconGallery.svg";
 import IconSunHigh from "@/assets/icons/IconSunHigh.svg";
-import LinkButton from "./LinkButton.astro";
 import LogoMark from "./LogoMark.astro";
 import { SITE } from "@/config";
 
@@ -103,24 +100,6 @@ const isActive = (path: string) => {
               title="Ir para busca">Buscar</a
             >
           </li>
-          {
-            SITE.showArchives && (
-              <li>
-                <LinkButton
-                  href="/archives"
-                  class:list={[
-                    "nav-link",
-                    { "nav-active": isActive("/archives") },
-                  ]}
-                  title="Arquivo"
-                  aria-label="archives"
-                >
-                  <IconArchive class="hidden sm:inline-block" />
-                  <span class="sm:sr-only">Arquivo</span>
-                </LinkButton>
-              </li>
-            )
-          }
       
           <!-- Separator -->
           <li class="flex items-center px-1" aria-hidden="true">
@@ -202,36 +181,7 @@ const isActive = (path: string) => {
               <span class="mobile-nav-indicator"></span>
               <span>Sobre</span>
             </a>
-            {
-              SITE.showArchives && (
-                <a
-                  href="/archives"
-                  class:list={[
-                    "mobile-nav-link",
-                    { active: isActive("/archives") },
-                  ]}
-                  style="--i:4"
-                >
-                  <span class="mobile-nav-indicator" />
-                  <span>Arquivo</span>
-                </a>
-              )
-            }
-            {
-              SITE.showGalleries && (
-                <a
-                  href="/galleries"
-                  class:list={[
-                    "mobile-nav-link",
-                    { active: isActive("/galleries") },
-                  ]}
-                  style="--i:5"
-                >
-                  <span class="mobile-nav-indicator" />
-                  <span>Galerias</span>
-                </a>
-              )
-            }
+            
           </nav>
 
           <!-- Divider -->
