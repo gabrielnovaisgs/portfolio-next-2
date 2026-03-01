@@ -11,6 +11,7 @@ export const ui = {
   "nav.search": "Buscar",
   "nav.archives": "Arquivo",
   "nav.galleries": "Galerias",
+  "nav.projects": "Projetos",
 
   // ── Header ────────────────────────────────────────────────
   "header.skipToContent": "Pular para o conteúdo",
@@ -112,6 +113,16 @@ export const ui = {
   "archives.posts": "posts",
   "archives.year": "ano",
   "archives.years": "anos",
+
+  // ── Projects page ─────────────────────────────────────────
+  "projects.title": "Projetos",
+  "projects.description":
+    "Uma seleção dos projetos que desenvolvi ao longo da minha jornada.",
+  "projects.count": "projetos",
+  "projects.featuredSection": "Projetos em Destaque",
+  "projects.viewAll": "Ver todos os projetos",
+  "projects.visitSite": "Ver site",
+  "projects.github": "GitHub",
 
   // ── Tags page ─────────────────────────────────────────────
   "tags.title": "Tags",

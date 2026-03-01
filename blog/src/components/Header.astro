@@ -4,7 +4,6 @@ import IconSearch from "@/assets/icons/IconSearch.svg";
 import IconArchive from "@/assets/icons/IconArchive.svg";
 import IconGallery from "@/assets/icons/IconGallery.svg";
 import IconSunHigh from "@/assets/icons/IconSunHigh.svg";
-import Logo from "@/assets/logo/devosfera.svg";
 import LinkButton from "./LinkButton.astro";
 import { SITE } from "@/config";
 
@@ -46,8 +45,8 @@ const isActive = (path: string) => {
         href="/"
         class="group relative z-20 flex items-center gap-2 text-xl font-bold tracking-tight sm:text-2xl"
       >
-        <!-- <span class="nav-logo-text">{SITE.title}</span> -->
-        <Logo class="w-37.5 dark:invert" />
+        <span class="nav-logo-text">{SITE.title}</span> 
+        <!-- <Logo class="w-37.5 dark:invert" /> -->
       </a>
 
       <!-- Nav area -->
@@ -69,6 +68,13 @@ const isActive = (path: string) => {
 
         <!-- Desktop links (always visible on sm+) -->
         <ul class="hidden sm:flex sm:flex-row sm:items-center sm:gap-1">
+          <li>
+            <a
+              href="/projects"
+              class:list={["nav-link", { "nav-active": isActive("/projects") }]}
+              >Projetos</a
+            >
+          </li>
           <li>
             <a
               href="/posts"
@@ -183,9 +189,17 @@ const isActive = (path: string) => {
         <div class="mobile-menu-inner">
           <nav class="mobile-nav-links">
             <a
+              href="/projects"
+              class:list={["mobile-nav-link", { active: isActive("/projects") }]}
+              style="--i:0"
+            >
+              <span class="mobile-nav-indicator"></span>
+              <span>Projetos</span>
+            </a>
+            <a
               href="/posts"
               class:list={["mobile-nav-link", { active: isActive("/posts") }]}
-              style="--i:0"
+              style="--i:1"
             >
               <span class="mobile-nav-indicator"></span>
               <span>Posts</span>
@@ -193,7 +207,7 @@ const isActive = (path: string) => {
             <a
               href="/tags"
               class:list={["mobile-nav-link", { active: isActive("/tags") }]}
-              style="--i:1"
+              style="--i:2"
             >
               <span class="mobile-nav-indicator"></span>
               <span>Tags</span>
@@ -201,7 +215,7 @@ const isActive = (path: string) => {
             <a
               href="/about"
               class:list={["mobile-nav-link", { active: isActive("/about") }]}
-              style="--i:2"
+              style="--i:3"
             >
               <span class="mobile-nav-indicator"></span>
               <span>Sobre</span>
@@ -214,7 +228,7 @@ const isActive = (path: string) => {
                     "mobile-nav-link",
                     { active: isActive("/archives") },
                   ]}
-                  style="--i:3"
+                  style="--i:4"
                 >
                   <span class="mobile-nav-indicator" />
                   <span>Arquivo</span>
@@ -229,7 +243,7 @@ const isActive = (path: string) => {
                     "mobile-nav-link",
                     { active: isActive("/galleries") },
                   ]}
-                  style="--i:4"
+                  style="--i:5"
                 >
                   <span class="mobile-nav-indicator" />
                   <span>Galerias</span>
