@@ -14,7 +14,7 @@
     }
 
     h3 {
-      @apply font-sriracha italic;
+      @apply font-app not-italic;
     }
 
     p,
