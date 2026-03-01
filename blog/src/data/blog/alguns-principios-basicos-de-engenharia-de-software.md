@@ -122,4 +122,4 @@ Não precisa fazer uma refatoração completa do sistema do zero, afinal todos s
 
 Sinceramente, acredito que mesmo na era da IA, onde ela pode gerar código de maneira muito mais rápida do que nós (e às vezes até com implementações melhores), esses princípios continuam sendo fundamentais, pois é **você** que deveria estar no comando. É **você** que terá que consertar qualquer dívida técnica que ela deixe para o futuro. Então se ela deixa um código macarrônico que vira uma bomba-relógio para daqui a algum tempo, no final das contas quem será responsabilizado sobre isso será **você** e não a IA. Ou você acha mesmo que, se der algum problema e o sistema cair em produção, a gerência vai ligar na Anthropic para reclamar? Hoje em dia você não precisa mais literalmente digitar cada caractere do código, mas na minha opinião, você precisa ter **capacidade crítica** de conseguir olhar e saber se aquilo faz sentido, se você com o **auxílio** da IA irão conseguir dar manutenção e continuar gerando valor no longo prazo.
 
-Mas e você, qual é a sua opinião a respeito?
+Mas e você, qual é a sua opinião a respeito? Deixe nos comentários!
