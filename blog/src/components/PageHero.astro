@@ -1,0 +1,105 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+}
+
+const { title, subtitle } = Astro.props;
+---
+
+<div
+  class="relative overflow-hidden rounded-3xl px-8 py-10 sm:p-12 mb-8 border"
+  style="background: color-mix(in srgb, var(--color-foreground) 3%, var(--color-background)); border-color: color-mix(in srgb, var(--color-accent) 12%, transparent);"
+  data-page-hero
+>
+  <!-- Aurora orbs -->
+  <div
+    class="page-hero-orb-1 absolute w-[300px] h-[300px] -top-[30%] -left-[10%] rounded-full blur-[60px] pointer-events-none"
+    style="background: radial-gradient(circle, color-mix(in srgb, var(--color-accent) 25%, transparent), transparent 70%);"
+    aria-hidden="true"
+  ></div>
+  <div
+    class="page-hero-orb-2 absolute w-[250px] h-[250px] top-[10%] -right-[5%] rounded-full blur-[60px] pointer-events-none"
+    style="background: radial-gradient(circle, color-mix(in srgb, var(--color-border) 20%, transparent), transparent 70%);"
+    aria-hidden="true"
+  ></div>
+  <div
+    class="page-hero-orb-3 absolute w-[200px] h-[200px] -bottom-[20%] left-[40%] rounded-full blur-[60px] pointer-events-none"
+    style="background: radial-gradient(circle, color-mix(in srgb, var(--color-accent) 12%, transparent), transparent 70%);"
+    aria-hidden="true"
+  ></div>
+
+  <!-- Mouse-follow aurora -->
+  <div
+    class="absolute w-[350px] h-[350px] rounded-full blur-[50px] pointer-events-none opacity-0 transition-opacity duration-300 z-[1] will-change-transform"
+    style="background: radial-gradient(circle, color-mix(in srgb, var(--color-accent) 18%, transparent), color-mix(in srgb, var(--color-border) 8%, transparent) 40%, transparent 70%); transform: translate(calc(var(--mx, 0px) - 175px), calc(var(--my, 0px) - 175px));"
+    data-page-mouse
+    aria-hidden="true"
+  ></div>
+
+  <!-- Content -->
+  <div class="relative z-10">
+    <h1 class="text-3xl font-bold tracking-tight sm:text-4xl">
+      <span class="page-hero-glow-text">{title}</span>
+    </h1>
+    {subtitle && <p class="mt-3 max-w-lg text-foreground/70">{subtitle}</p>}
+    <slot />
+  </div>
+</div>
+
+<style>
+  .page-hero-glow-text {
+    background: linear-gradient(135deg, var(--color-foreground), var(--color-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 25px color-mix(in srgb, var(--color-accent) 25%, transparent));
+  }
+
+  .page-hero-orb-1 { animation: page-orb-1 7s ease-in-out infinite alternate; }
+  .page-hero-orb-2 { animation: page-orb-2 9s ease-in-out infinite alternate; }
+  .page-hero-orb-3 { animation: page-orb-3 11s ease-in-out infinite alternate; }
+
+  @keyframes page-orb-1 {
+    0%   { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(40px, 20px) scale(1.2); }
+  }
+  @keyframes page-orb-2 {
+    0%   { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(-30px, 30px) scale(1.15); }
+  }
+  @keyframes page-orb-3 {
+    0%   { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(20px, -25px) scale(1.1); }
+  }
+</style>
+
+<script>
+  let pageHeroCleanup: AbortController | null = null;
+
+  function setupPageHero() {
+    if (pageHeroCleanup) pageHeroCleanup.abort();
+    pageHeroCleanup = new AbortController();
+    const { signal } = pageHeroCleanup;
+
+    const hero = document.querySelector("[data-page-hero]") as HTMLElement;
+    const mouse = document.querySelector("[data-page-mouse]") as HTMLElement;
+    if (!hero || !mouse) return;
+
+    hero.addEventListener("mousemove", e => {
+      requestAnimationFrame(() => {
+        const rect = hero.getBoundingClientRect();
+        mouse.style.setProperty("--mx", `${e.clientX - rect.left}px`);
+        mouse.style.setProperty("--my", `${e.clientY - rect.top}px`);
+        mouse.style.opacity = "1";
+      });
+    }, { signal });
+
+    hero.addEventListener("mouseleave", () => {
+      mouse.style.opacity = "0";
+    }, { signal });
+  }
+
+  setupPageHero();
+  document.addEventListener("astro:after-swap", setupPageHero);
+</script>

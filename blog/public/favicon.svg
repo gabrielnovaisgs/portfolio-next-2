@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100" height="100" rx="22" fill="#10131a"/>
+
+  <!-- Subtle border -->
+  <rect x="2" y="2" width="96" height="96" rx="21"
+        fill="none" stroke="#2264e3" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- Corner accents — top-left -->
+  <path d="M2 20 L2 2 L20 2"
+        fill="none" stroke="#008fec" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+
+  <!-- Corner accents — bottom-right -->
+  <path d="M80 98 L98 98 L98 80"
+        fill="none" stroke="#008fec" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+
+  <!-- GN monogram — G in accent, N in white -->
+  <text
+    x="50" y="67"
+    text-anchor="middle"
+    font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif"
+    font-weight="800"
+    font-size="48"
+    letter-spacing="-2"
+  >
+    <tspan fill="#008fec" filter="url(#glow)">G</tspan><tspan fill="#f6f7f8">N</tspan>
+  </text>
+</svg>

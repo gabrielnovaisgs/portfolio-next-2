@@ -1,0 +1,97 @@
+---
+interface Props {
+  class?: string;
+  /** "sm" para o footer (sem cursor, mais compacto) */
+  variant?: "default" | "sm";
+}
+
+const { class: className, variant = "default" } = Astro.props;
+---
+
+<span
+  class:list={["logotype", variant === "sm" && "logotype--sm", className]}
+  aria-label="Gabriel Novais"
+>
+  <span class="logo-user" aria-hidden="true">gabriel</span><span
+    class="logo-at"
+    aria-hidden="true">@</span
+  ><span class="logo-host" aria-hidden="true">novais</span>{
+    variant === "default" && (
+      <span class="logo-cursor" aria-hidden="true">
+        _
+      </span>
+    )
+  }
+</span>
+
+<style>
+  .logotype {
+    display: inline-flex;
+    align-items: baseline;
+    font-family: var(--font-cartograph);
+    letter-spacing: -0.02em;
+    line-height: 1;
+    user-select: none;
+  }
+
+  /* ── user part ── */
+  .logo-user {
+    font-weight: 400;
+    color: var(--foreground);
+    opacity: 0.6;
+    transition: opacity 0.25s ease;
+  }
+
+  /* ── @ sign — the visual hook ── */
+  .logo-at {
+    font-weight: 500;
+    color: var(--accent);
+    filter:
+      drop-shadow(0 0 5px color-mix(in oklab, var(--accent) 55%, transparent))
+      drop-shadow(0 0 12px color-mix(in oklab, var(--accent) 30%, transparent));
+    transition: filter 0.35s ease;
+    /* no letter-spacing gap */
+    margin: 0 0.01em;
+  }
+
+  /* ── host part ── */
+  .logo-host {
+    font-weight: 700;
+    color: var(--foreground);
+    transition: color 0.25s ease;
+  }
+
+  /* ── blinking cursor ── */
+  .logo-cursor {
+    color: var(--accent);
+    font-weight: 700;
+    margin-left: 0.05em;
+    animation: logo-blink 1.15s step-end infinite;
+    filter: drop-shadow(0 0 4px color-mix(in oklab, var(--accent) 60%, transparent));
+  }
+
+  @keyframes logo-blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
+  }
+
+  /* ── sm variant ── */
+  .logotype--sm .logo-user {
+    opacity: 0.5;
+  }
+
+  /* ── hover — parent must have class="group" ── */
+  :global(.group:hover) .logo-user {
+    opacity: 1;
+  }
+
+  :global(.group:hover) .logo-at {
+    filter:
+      drop-shadow(0 0 8px color-mix(in oklab, var(--accent) 80%, transparent))
+      drop-shadow(0 0 20px color-mix(in oklab, var(--accent) 45%, transparent));
+  }
+
+  :global(.group:hover) .logo-host {
+    color: color-mix(in oklab, var(--accent) 28%, var(--foreground));
+  }
+</style>
