@@ -37,7 +37,7 @@ export const ui = {
   "datetime.updated": "Atualizado:",
 
   // ── Footer ───────────────────────────────────────────────
-  "footer.tagline": "Um espaço onde a curiosidade se transforma em código.",
+  "footer.tagline": "Compartilhando conhecimento",
   "footer.connect": "Conectar",
   "footer.rights": "Todos os direitos reservados.",
   "footer.madeWith": "Feito com",

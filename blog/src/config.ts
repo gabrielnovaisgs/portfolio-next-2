@@ -1,9 +1,10 @@
 export const SITE = {
   website: "https://devosfera.vercel.app/",
-  author: "Andrés Ujpán",
-  profile: "https://github.com/0xdres",
-  desc: "Un blog para compartir mis pensamientos y proyectos mientras aprendo cosas nuevas.",
-  title: "Devosfera",
+  author: "Gabriel Novais",
+  profile: "https://github.com/gabrielnovaisgs",
+  desc: "Um blog para compartilhar minhas aventuras e aprendizados no mundo do desenvolvimento web, arquitetura de software e tecnologia em geral.",
+  title: "Gabriel Novais",
+  subTitle: "Software Engineer | Tech Enthusiast | Lifelong Learner",
   ogImage: "devosfera-og.webp", // ubicado en la carpeta public
   lightAndDarkMode: true,
   postPerIndex: 6,
@@ -22,7 +23,7 @@ export const SITE = {
   lang: "pt-BR", // html lang code. Set this empty and default will be "en"
   timezone: "America/Sao_Paulo", // Default global timezone (IANA format) https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   introAudio: {
-    enabled: true, // mostrar/ocultar el reproductor en el hero
+    enabled: false, // 
     src: "/audio/intro-web.mp3", // ruta al archivo (relativa a /public)
     label: "INTRO.MP3", // etiqueta display en el reproductor
     duration: 30, // duración en segundos (para la barra de progreso fija)
