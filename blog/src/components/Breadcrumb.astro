@@ -24,32 +24,35 @@ if (breadcrumbList[0] === "tags" && !isNaN(Number(breadcrumbList[2]))) {
 ---
 
 <nav class="app-layout mt-6 mb-2" aria-label="breadcrumb">
-  <div class="breadcrumb-bar inline-flex items-center gap-1.5 rounded-full border border-border/20 bg-muted/5 px-3 py-1.5 font-cartograph text-sm backdrop-blur-sm">
-    {/* Home icon / Root symbol */}
+  <div
+    class="inline-flex flex-wrap items-baseline gap-x-[0.1em] font-cartograph text-sm backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)]"
+  >
+    <!-- user@host — links to home -->
     <a
       href="/"
-      class="breadcrumb-link inline-flex shrink-0 items-center justify-center rounded-md px-1.5 py-0.5 text-foreground/50 transition-colors duration-200 hover:bg-muted/10 hover:text-accent"
+      class="font-semibold text-accent transition-opacity duration-200 hover:opacity-75 filter-[drop-shadow(0_0_6px_color-mix(in_oklab,var(--color-accent)_40%,transparent))]"
       aria-label="Início"
       title="Início"
     >
-      ~
+      gabriel@novais
     </a>
+
+    <!-- colon separator -->
+    <span class="text-foreground opacity-40" aria-hidden="true">:</span>
+
+    <!-- tilde root -->
+    <span class="font-medium text-border">~</span>
+
     {
       breadcrumbList.map((breadcrumb, index) => (
         <>
-          <span
-            class="breadcrumb-sep shrink-0 text-accent/40"
-            aria-hidden="true"
-          >
+          <span class="text-accent/40" aria-hidden="true">
             /
           </span>
 
           {index + 1 === breadcrumbList.length ? (
             <span
-              class:list={[
-                "breadcrumb-current truncate px-1.5 py-0.5 text-accent/90 capitalize",
-                { lowercase: index > 0 },
-              ]}
+              class="max-w-[28ch] truncate capitalize text-accent/90"
               aria-current="page"
             >
               {decodeURIComponent(breadcrumb)}
@@ -57,7 +60,7 @@ if (breadcrumbList[0] === "tags" && !isNaN(Number(breadcrumbList[2]))) {
           ) : (
             <a
               href={`/${breadcrumb}/`}
-              class="breadcrumb-link shrink-0 rounded-md px-1.5 py-0.5 capitalize text-foreground/50 transition-colors duration-200 hover:bg-muted/10 hover:text-accent"
+              class="capitalize text-foreground/50 transition-colors duration-200 hover:text-accent"
             >
               {decodeURIComponent(breadcrumb)}
             </a>
@@ -67,13 +70,3 @@ if (breadcrumbList[0] === "tags" && !isNaN(Number(breadcrumbList[2]))) {
     }
   </div>
 </nav>
-
-<style>
-  .breadcrumb-bar {
-    -webkit-backdrop-filter: blur(4px);
-  }
-
-  .breadcrumb-current {
-    max-width: 28ch;
-  }
-</style>
