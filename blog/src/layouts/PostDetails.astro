@@ -29,8 +29,7 @@ const {
   pubDatetime,
   modDatetime,
   timezone,
-  tags,
-  hideEditPost,
+  tags
 } = post.data;
 
 const { Content } = await render(post);
@@ -165,12 +164,6 @@ const nextPost =
             />
           </div>
 
-          <!-- Edit post -->
-          <EditPost
-            {hideEditPost}
-            {post}
-            class="hidden rounded-lg border border-border/25 bg-muted/10 px-2.5 py-1 opacity-70 backdrop-blur-sm transition-all duration-200 hover:border-accent/30 hover:opacity-100 sm:flex [&>svg]:size-3.5"
-          />
         </div>
 
 
@@ -201,7 +194,6 @@ const nextPost =
       </div>
     </div>
 
-    <EditPost class="mt-4 sm:hidden" {hideEditPost} {post} />
 
     <!-- Tags & Share row -->
     <div
@@ -225,6 +217,83 @@ const nextPost =
       <!-- Share links -->
       <ShareLinks />
     </div>
+    <!-- Comments (Cusdis) -->
+    <section class="cusdis-wrapper mt-10">
+      <h2 class="mb-4 flex items-center gap-2 font-cartograph text-xs tracking-widest text-accent/60 uppercase select-none">
+        <span class="h-px flex-1 bg-border/20"></span>
+        Comentários
+        <span class="h-px flex-1 bg-border/20"></span>
+      </h2>
+      <div
+        id="cusdis_thread"
+        data-host="https://cusdis.com"
+        data-app-id="9a2e2374-0039-4156-a19b-3a9f3b1efe1f"
+        data-page-id={post.id}
+        data-page-url={Astro.url.href}
+        data-page-title={title}
+        data-theme="auto"
+      ></div>
+    </section>
+    <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+    <script is:inline>
+      // Auto-resize Cusdis iframe to remove scrollbar
+      (function () {
+        function resizeCusdisIframe() {
+          const iframe = document.querySelector("#cusdis_thread iframe");
+          if (!iframe) return;
+          iframe.setAttribute("scrolling", "no");
+          iframe.style.overflow = "hidden";
+          try {
+            const body = iframe.contentDocument?.body;
+            if (body) {
+              iframe.style.height = body.scrollHeight + "px";
+            }
+          } catch (_) {
+            // cross-origin: listen for message from Cusdis
+          }
+        }
+
+        // Listen for Cusdis postMessage resize events
+        window.addEventListener("message", function (e) {
+          if (e.data && e.data.from === "cusdis") {
+            const iframe = document.querySelector("#cusdis_thread iframe");
+            if (iframe) {
+              iframe.setAttribute("scrolling", "no");
+              iframe.style.overflow = "hidden";
+              // Give Cusdis a moment to render, then resize
+              setTimeout(function () {
+                try {
+                  const body = iframe.contentDocument?.body;
+                  if (body) {
+                    iframe.style.height = body.scrollHeight + "px";
+                  }
+                } catch (_) {}
+              }, 300);
+            }
+          }
+        });
+
+        // Observe for iframe insertion
+        const observer = new MutationObserver(function () {
+          const iframe = document.querySelector("#cusdis_thread iframe");
+          if (iframe) {
+            iframe.setAttribute("scrolling", "no");
+            iframe.style.overflow = "hidden";
+            iframe.addEventListener("load", function () {
+              setTimeout(resizeCusdisIframe, 500);
+              // Keep checking as comments load
+              setTimeout(resizeCusdisIframe, 1500);
+              setTimeout(resizeCusdisIframe, 3000);
+            });
+            observer.disconnect();
+          }
+        });
+        observer.observe(document.getElementById("cusdis_thread") || document.body, {
+          childList: true,
+          subtree: true,
+        });
+      })();
+    </script>
 
     <!-- Decorative separator before prev/next -->
     <div class="my-6 flex items-center gap-3" aria-hidden="true">
@@ -515,5 +584,13 @@ const nextPost =
   .post-nav-link:hover .post-nav-bg {
     opacity: 1;
     filter: blur(20px);
+  }
+
+  /* Cusdis comments integration */
+  .cusdis-wrapper :global(#cusdis_thread iframe) {
+    width: 100% !important;
+    border: none !important;
+    overflow: hidden !important;
+    color-scheme: normal;
   }
 </style>
