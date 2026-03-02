@@ -1,11 +1,11 @@
 export const SITE = {
-  website: "https://devosfera.vercel.app/",
+  website: "https://gabrielnovais.com.br",
   author: "Gabriel Novais",
   profile: "https://github.com/gabrielnovaisgs",
   desc: "Um blog para compartilhar minhas aventuras e aprendizados no mundo do desenvolvimento web, arquitetura de software e tecnologia em geral.",
   title: "Gabriel Novais",
   subTitle: "Software Engineer | Tech Enthusiast | Lifelong Learner",
-  ogImage: "devosfera-og.webp", // ubicado en la carpeta public
+  ogImage: undefined,
   lightAndDarkMode: true,
   postPerIndex: 6,
   postPerPage: 8,

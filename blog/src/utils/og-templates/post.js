@@ -14,13 +14,13 @@ export default async post => {
           flexDirection: "column",
           alignItems: "flex-start",
           justifyContent: "space-between",
-          backgroundColor: "#0f172a", // Fondo oscuro (Slate 900)
+          backgroundColor: "#10131a",
           color: "white",
           padding: "80px",
           position: "relative",
         },
         children: [
-          // 1. Elemento Decorativo de Fondo (Se pinta primero = queda al fondo)
+          // 1. Elemento Decorativo de Fundo
           {
             type: "div",
             props: {
@@ -30,25 +30,25 @@ export default async post => {
                 right: "-100px",
                 width: "600px",
                 height: "600px",
-                background: "linear-gradient(140deg, #6366f1, #a855f7)",
+                background: "linear-gradient(140deg, #008fec, #2264e3)",
                 filter: "blur(100px)",
-                opacity: 0.4,
+                opacity: 0.35,
                 borderRadius: "100%",
               },
             },
           },
 
-          // 2. Cabecera: Nombre del sitio (Se pinta encima del fondo)
+          // 2. Cabecera: Nombre del sitio
           {
             type: "div",
             props: {
               style: {
                 display: "flex",
                 alignItems: "center",
-                backgroundColor: "rgba(255, 255, 255, 0.1)",
+                backgroundColor: "rgba(0, 143, 236, 0.08)",
                 padding: "10px 24px",
                 borderRadius: "50px",
-                border: "1px solid rgba(255, 255, 255, 0.2)",
+                border: "1px solid rgba(0, 143, 236, 0.25)",
               },
               children: {
                 type: "span",
@@ -73,7 +73,6 @@ export default async post => {
                 display: "flex",
                 flexDirection: "column",
                 width: "100%",
-                // zIndex eliminado (no es necesario por el orden de los hijos)
               },
               children: {
                 type: "h1",
@@ -85,7 +84,6 @@ export default async post => {
                     margin: 0,
                     color: "#ffffff",
                     textShadow: "0 2px 10px rgba(0,0,0,0.3)",
-
                     overflow: "hidden",
                     display: "-webkit-box",
                     lineClamp: 3,
@@ -105,7 +103,6 @@ export default async post => {
                 display: "flex",
                 alignItems: "center",
                 width: "100%",
-                // zIndex eliminado
               },
               children: [
                 // Línea separadora decorativa
@@ -115,7 +112,7 @@ export default async post => {
                     style: {
                       width: "60px",
                       height: "4px",
-                      backgroundColor: "#818cf8",
+                      backgroundColor: "#008fec",
                       marginRight: "24px",
                     },
                   },
